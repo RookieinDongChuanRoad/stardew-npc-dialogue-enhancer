@@ -1,0 +1,2 @@
+# Markdown 使用两个行尾空格表达显式 hard break；不把合法排版误报为代码空白错误。
+*.md whitespace=-blank-at-eol

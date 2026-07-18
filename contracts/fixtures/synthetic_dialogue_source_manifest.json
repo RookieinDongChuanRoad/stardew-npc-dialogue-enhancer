@@ -1,0 +1,1062 @@
+{
+  "manifest_version": "synthetic-dialogue-source-manifest-v1",
+  "fixture_provenance": "synthetic",
+  "entries": [
+    {
+      "npc_id": "Abigail",
+      "locale": "en",
+      "source_family": "ordinary_daily",
+      "asset_name": "Characters/Dialogue/Abigail",
+      "dialogue_key": "Mon",
+      "source_text": "Synthetic test: Abigail is planning an ordinary day.",
+      "source_hash": "sha256:771d1371fc11e5c1421a85b25dcefa5f5dd1e2cab30fc17992365c2044fe99c9",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Abigail",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "Synthetic style sample one for Abigail.",
+        "Synthetic style sample two for Abigail."
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Abigail",
+      "locale": "en",
+      "source_family": "rainy_daily",
+      "asset_name": "Characters/Dialogue/rainy",
+      "dialogue_key": "Abigail",
+      "source_text": "Synthetic test: Abigail notices the rain.",
+      "source_hash": "sha256:14700d8e79446112df4b25e96bacd5f17052b8572a151f48c6f22e5aa89cec96",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Abigail",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "Synthetic style sample one for Abigail.",
+        "Synthetic style sample two for Abigail."
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Abigail",
+      "locale": "zh-CN",
+      "source_family": "ordinary_daily",
+      "asset_name": "Characters/Dialogue/Abigail",
+      "dialogue_key": "Mon",
+      "source_text": "合成测试：Abigail 想聊聊风、矿井、洞穴探险和农场计划。",
+      "source_hash": "sha256:16f378f59a7ae04caa19e7ac2580c6b1eef465d2fb323a9347abedb336e42cca",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Abigail",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "合成测试：Abigail 的风格样本一。",
+        "合成测试：Abigail 的风格样本二。"
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Abigail",
+      "locale": "zh-CN",
+      "source_family": "rainy_daily",
+      "asset_name": "Characters/Dialogue/rainy",
+      "dialogue_key": "Abigail",
+      "source_text": "合成测试：Abigail 注意到了雨天。",
+      "source_hash": "sha256:b24150f31ddf8b13236b55b080ea5044b511bef5aa15e81859424d8194da8e54",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Abigail",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "合成测试：Abigail 的风格样本一。",
+        "合成测试：Abigail 的风格样本二。"
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Alex",
+      "locale": "en",
+      "source_family": "ordinary_daily",
+      "asset_name": "Characters/Dialogue/Alex",
+      "dialogue_key": "Mon",
+      "source_text": "Synthetic test: @, Alex is planning an ordinary day.",
+      "source_hash": "sha256:2c0942943e650ce851ad7967168de50c9fe203eadac8331792f9f51e1364bcef",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Alex",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "Synthetic style sample one for Alex.",
+        "Synthetic style sample two for Alex."
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Alex",
+      "locale": "en",
+      "source_family": "rainy_daily",
+      "asset_name": "Characters/Dialogue/rainy",
+      "dialogue_key": "Alex",
+      "source_text": "Synthetic test: Alex notices the rain.",
+      "source_hash": "sha256:0f972e289182d7ce56c40064ad7e6a387f051a9000195b9b9f37fb9b16134cc2",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Alex",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "Synthetic style sample one for Alex.",
+        "Synthetic style sample two for Alex."
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Alex",
+      "locale": "zh-CN",
+      "source_family": "ordinary_daily",
+      "asset_name": "Characters/Dialogue/Alex",
+      "dialogue_key": "Mon",
+      "source_text": "合成测试：Alex 正在计划普通的一天。",
+      "source_hash": "sha256:63c6fca0753ad35a2371c1d391d57486992aed8e72b510af9e3aa2ff5a3a5d50",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Alex",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "合成测试：Alex 的风格样本一。",
+        "合成测试：Alex 的风格样本二。"
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Alex",
+      "locale": "zh-CN",
+      "source_family": "rainy_daily",
+      "asset_name": "Characters/Dialogue/rainy",
+      "dialogue_key": "Alex",
+      "source_text": "合成测试：Alex 注意到了雨天。",
+      "source_hash": "sha256:da215bf5a851b75d306cbeea89f349b2b8e34adca1dca52e02892e01ccd54e69",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Alex",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "合成测试：Alex 的风格样本一。",
+        "合成测试：Alex 的风格样本二。"
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Elliott",
+      "locale": "en",
+      "source_family": "ordinary_daily",
+      "asset_name": "Characters/Dialogue/Elliott",
+      "dialogue_key": "Mon",
+      "source_text": "Synthetic test: Elliott is planning an ordinary day.",
+      "source_hash": "sha256:d342f531bc1b44da4ca8b55ceac50aacddfcf936a5c13b4256145e1d67a47cf0",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Elliott",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "Synthetic style sample one for Elliott.",
+        "Synthetic style sample two for Elliott."
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Elliott",
+      "locale": "en",
+      "source_family": "rainy_daily",
+      "asset_name": "Characters/Dialogue/rainy",
+      "dialogue_key": "Elliott",
+      "source_text": "Synthetic test: Elliott notices the rain.",
+      "source_hash": "sha256:8449caa49d32e94d0fa227e0cf771dc8f1a52bb9541154b4ceb8e715b002bca6",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Elliott",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "Synthetic style sample one for Elliott.",
+        "Synthetic style sample two for Elliott."
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Elliott",
+      "locale": "zh-CN",
+      "source_family": "ordinary_daily",
+      "asset_name": "Characters/Dialogue/Elliott",
+      "dialogue_key": "Mon",
+      "source_text": "合成测试：Elliott 正在计划普通的一天。",
+      "source_hash": "sha256:e3b0d34f7e958eb0879cf635ba4cca24f31f4e9386568c063b72395849287524",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Elliott",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "合成测试：Elliott 的风格样本一。",
+        "合成测试：Elliott 的风格样本二。"
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Elliott",
+      "locale": "zh-CN",
+      "source_family": "rainy_daily",
+      "asset_name": "Characters/Dialogue/rainy",
+      "dialogue_key": "Elliott",
+      "source_text": "合成测试：Elliott 注意到了雨天。",
+      "source_hash": "sha256:0a058a6412951eac19715823f6e36b563a9c73276e8c5ecb8dfce71b55def256",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Elliott",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "合成测试：Elliott 的风格样本一。",
+        "合成测试：Elliott 的风格样本二。"
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Emily",
+      "locale": "en",
+      "source_family": "ordinary_daily",
+      "asset_name": "Characters/Dialogue/Emily",
+      "dialogue_key": "Mon",
+      "source_text": "Synthetic test: Emily is planning an ordinary day.",
+      "source_hash": "sha256:990499b50b916fba17d5f8e98decf168eef696e0ad6150886fac1566159d2439",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Emily",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "Synthetic style sample one for Emily.",
+        "Synthetic style sample two for Emily."
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Emily",
+      "locale": "en",
+      "source_family": "rainy_daily",
+      "asset_name": "Characters/Dialogue/rainy",
+      "dialogue_key": "Emily",
+      "source_text": "Synthetic test: Emily notices the rain.",
+      "source_hash": "sha256:af929fb7ba6f64d3846585e72e44dfd9995af540e8869165e0da27fdb9c3e0f8",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Emily",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "Synthetic style sample one for Emily.",
+        "Synthetic style sample two for Emily."
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Emily",
+      "locale": "zh-CN",
+      "source_family": "ordinary_daily",
+      "asset_name": "Characters/Dialogue/Emily",
+      "dialogue_key": "Mon",
+      "source_text": "合成测试：Emily 正在计划普通的一天。",
+      "source_hash": "sha256:7d1d3d77ba3ea57d9a1928d53b1a8db7a2999c2e8fadcf3e76d9bc2da64c3ec1",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Emily",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "合成测试：Emily 的风格样本一。",
+        "合成测试：Emily 的风格样本二。"
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Emily",
+      "locale": "zh-CN",
+      "source_family": "rainy_daily",
+      "asset_name": "Characters/Dialogue/rainy",
+      "dialogue_key": "Emily",
+      "source_text": "合成测试：Emily 注意到了雨天。",
+      "source_hash": "sha256:24325367fd75daf8f5ec552b29f719902d4f05c5ca4a95c85e9cdcf10676a7be",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Emily",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "合成测试：Emily 的风格样本一。",
+        "合成测试：Emily 的风格样本二。"
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Haley",
+      "locale": "en",
+      "source_family": "ordinary_daily",
+      "asset_name": "Characters/Dialogue/Haley",
+      "dialogue_key": "Mon",
+      "source_text": "Synthetic test: Haley is planning an ordinary day.",
+      "source_hash": "sha256:60ed223047f8067bc4c04bb546c40a9fd25aea9cd2c886de5a63d8421c8b3a1e",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Haley",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "Synthetic style sample one for Haley.",
+        "Synthetic style sample two for Haley."
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Haley",
+      "locale": "en",
+      "source_family": "rainy_daily",
+      "asset_name": "Characters/Dialogue/rainy",
+      "dialogue_key": "Haley",
+      "source_text": "Synthetic test: Haley notices the rain.",
+      "source_hash": "sha256:76c8707e2ed8ca5d667ff44e8ff4a59df81c1eb4293e57052f168653e979098d",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Haley",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "Synthetic style sample one for Haley.",
+        "Synthetic style sample two for Haley."
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Haley",
+      "locale": "zh-CN",
+      "source_family": "ordinary_daily",
+      "asset_name": "Characters/Dialogue/Haley",
+      "dialogue_key": "Mon",
+      "source_text": "合成测试：Haley 正在计划普通的一天。",
+      "source_hash": "sha256:3cac33e4493458939460abaaaf543072c586434a01f208ccd9ad43e82fd8eb95",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Haley",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "合成测试：Haley 的风格样本一。",
+        "合成测试：Haley 的风格样本二。"
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Haley",
+      "locale": "zh-CN",
+      "source_family": "rainy_daily",
+      "asset_name": "Characters/Dialogue/rainy",
+      "dialogue_key": "Haley",
+      "source_text": "合成测试：Haley 注意到了雨天。",
+      "source_hash": "sha256:e47d595c188832e7b3bc992d80d7ed5c5f6d666f5c410fce81a47791273d7830",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Haley",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "合成测试：Haley 的风格样本一。",
+        "合成测试：Haley 的风格样本二。"
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Harvey",
+      "locale": "en",
+      "source_family": "ordinary_daily",
+      "asset_name": "Characters/Dialogue/Harvey",
+      "dialogue_key": "Mon",
+      "source_text": "Synthetic test: Harvey is planning an ordinary day.",
+      "source_hash": "sha256:7fa56eb6f6fa9592b2107725d84d2d67941ea950a13312396cd9b7fffaa003c6",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Harvey",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "Synthetic style sample one for Harvey.",
+        "Synthetic style sample two for Harvey."
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Harvey",
+      "locale": "en",
+      "source_family": "rainy_daily",
+      "asset_name": "Characters/Dialogue/rainy",
+      "dialogue_key": "Harvey",
+      "source_text": "Synthetic test: Harvey notices the rain.",
+      "source_hash": "sha256:ec70b1b91aace665a5cf3836740c25d39ec76a50a73522a0bf5b40999d67443b",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Harvey",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "Synthetic style sample one for Harvey.",
+        "Synthetic style sample two for Harvey."
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Harvey",
+      "locale": "zh-CN",
+      "source_family": "ordinary_daily",
+      "asset_name": "Characters/Dialogue/Harvey",
+      "dialogue_key": "Mon",
+      "source_text": "合成测试：Harvey 正在计划普通的一天。",
+      "source_hash": "sha256:6f05bdc58d700f798bd3e6c7ab78973abeff5cabcccb04382096969eefe94f8b",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Harvey",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "合成测试：Harvey 的风格样本一。",
+        "合成测试：Harvey 的风格样本二。"
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Harvey",
+      "locale": "zh-CN",
+      "source_family": "rainy_daily",
+      "asset_name": "Characters/Dialogue/rainy",
+      "dialogue_key": "Harvey",
+      "source_text": "合成测试：Harvey 注意到了雨天。",
+      "source_hash": "sha256:ec11fccdd25d8dca1aaed78d6ed8b68894e11609d55196edf957c0c5265a0102",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Harvey",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "合成测试：Harvey 的风格样本一。",
+        "合成测试：Harvey 的风格样本二。"
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Leah",
+      "locale": "en",
+      "source_family": "ordinary_daily",
+      "asset_name": "Characters/Dialogue/Leah",
+      "dialogue_key": "Mon",
+      "source_text": "Synthetic test: Leah is planning an ordinary day.",
+      "source_hash": "sha256:1c3f0c96bc17e1fe072848ef82dbb193b40dc414f853e291ee597146dc62a83f",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Leah",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "Synthetic style sample one for Leah.",
+        "Synthetic style sample two for Leah."
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Leah",
+      "locale": "en",
+      "source_family": "rainy_daily",
+      "asset_name": "Characters/Dialogue/rainy",
+      "dialogue_key": "Leah",
+      "source_text": "Synthetic test: Leah notices the rain.",
+      "source_hash": "sha256:001801a90fba3d83d1b86b05e9ca7bf255af5cadff7068f19f9784701c374aad",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Leah",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "Synthetic style sample one for Leah.",
+        "Synthetic style sample two for Leah."
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Leah",
+      "locale": "zh-CN",
+      "source_family": "ordinary_daily",
+      "asset_name": "Characters/Dialogue/Leah",
+      "dialogue_key": "Mon",
+      "source_text": "合成测试：Leah 正在计划普通的一天。",
+      "source_hash": "sha256:4e4a597c2a9ecdbe09333e02f06c4428e8d64e1fb329779ff49009474c710b57",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Leah",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "合成测试：Leah 的风格样本一。",
+        "合成测试：Leah 的风格样本二。"
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Leah",
+      "locale": "zh-CN",
+      "source_family": "rainy_daily",
+      "asset_name": "Characters/Dialogue/rainy",
+      "dialogue_key": "Leah",
+      "source_text": "合成测试：Leah 注意到了雨天。",
+      "source_hash": "sha256:a2c649a4d9773e8885ee157e08b643689c90cc713408a292018265c6765dc6e1",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Leah",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "合成测试：Leah 的风格样本一。",
+        "合成测试：Leah 的风格样本二。"
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Maru",
+      "locale": "en",
+      "source_family": "ordinary_daily",
+      "asset_name": "Characters/Dialogue/Maru",
+      "dialogue_key": "Mon",
+      "source_text": "Synthetic test: Maru is planning an ordinary day.",
+      "source_hash": "sha256:1f0d5fa885b22d9b4319904f2fee132cde1716d3782c053ad40da487d60b7aa6",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Maru",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "Synthetic style sample one for Maru.",
+        "Synthetic style sample two for Maru."
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Maru",
+      "locale": "en",
+      "source_family": "rainy_daily",
+      "asset_name": "Characters/Dialogue/rainy",
+      "dialogue_key": "Maru",
+      "source_text": "Synthetic test: Maru notices the rain.",
+      "source_hash": "sha256:74bfd8f50e03e41f035dba9dbf9ffcf86aab4193f11367459817f64ab6d09a83",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Maru",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "Synthetic style sample one for Maru.",
+        "Synthetic style sample two for Maru."
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Maru",
+      "locale": "zh-CN",
+      "source_family": "ordinary_daily",
+      "asset_name": "Characters/Dialogue/Maru",
+      "dialogue_key": "Mon",
+      "source_text": "合成测试：Maru 正在计划普通的一天。",
+      "source_hash": "sha256:0c02931bd050e183ff754a623ad7fc34bbf114e577fcc7e653321aa5cc39d43c",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Maru",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "合成测试：Maru 的风格样本一。",
+        "合成测试：Maru 的风格样本二。"
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Maru",
+      "locale": "zh-CN",
+      "source_family": "rainy_daily",
+      "asset_name": "Characters/Dialogue/rainy",
+      "dialogue_key": "Maru",
+      "source_text": "合成测试：Maru 注意到了雨天。",
+      "source_hash": "sha256:7ff23e26d4c126553f3494439bbb131df2187c35d1726566931102370dfd5567",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Maru",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "合成测试：Maru 的风格样本一。",
+        "合成测试：Maru 的风格样本二。"
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Penny",
+      "locale": "en",
+      "source_family": "ordinary_daily",
+      "asset_name": "Characters/Dialogue/Penny",
+      "dialogue_key": "Mon",
+      "source_text": "Synthetic test: Penny is planning an ordinary day.",
+      "source_hash": "sha256:a8b55a7f35c3e223c7706a7b763802215f39b45d0781840191a76d6a2e1f3a0a",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Penny",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "Synthetic style sample one for Penny.",
+        "Synthetic style sample two for Penny."
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Penny",
+      "locale": "en",
+      "source_family": "rainy_daily",
+      "asset_name": "Characters/Dialogue/rainy",
+      "dialogue_key": "Penny",
+      "source_text": "Synthetic test: Penny notices the rain.",
+      "source_hash": "sha256:005ce344f775f179d2de729992463e94222f7e4577a67e9d5d1e1eb54e6183c0",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Penny",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "Synthetic style sample one for Penny.",
+        "Synthetic style sample two for Penny."
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Penny",
+      "locale": "zh-CN",
+      "source_family": "ordinary_daily",
+      "asset_name": "Characters/Dialogue/Penny",
+      "dialogue_key": "Mon",
+      "source_text": "合成测试：Penny 正在计划普通的一天。",
+      "source_hash": "sha256:3b229dedc530ab7d3af1cfb414ed8e01af1905a2fac82b81268009aab3fb82c8",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Penny",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "合成测试：Penny 的风格样本一。",
+        "合成测试：Penny 的风格样本二。"
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Penny",
+      "locale": "zh-CN",
+      "source_family": "rainy_daily",
+      "asset_name": "Characters/Dialogue/rainy",
+      "dialogue_key": "Penny",
+      "source_text": "合成测试：Penny 注意到了雨天。",
+      "source_hash": "sha256:11a9e45ceb0baa6a0cad823c5a4aa004f35195cdc09ef4f347f5132eed5dfd11",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Penny",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "合成测试：Penny 的风格样本一。",
+        "合成测试：Penny 的风格样本二。"
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Sam",
+      "locale": "en",
+      "source_family": "ordinary_daily",
+      "asset_name": "Characters/Dialogue/Sam",
+      "dialogue_key": "Mon",
+      "source_text": "Synthetic test: Sam is planning an ordinary day.",
+      "source_hash": "sha256:62bff143c4e59e6dfbe7c9756ae00ff9d6fdd10f2f387ba059aa668f3705091a",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Sam",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "Synthetic style sample one for Sam.",
+        "Synthetic style sample two for Sam."
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Sam",
+      "locale": "en",
+      "source_family": "rainy_daily",
+      "asset_name": "Characters/Dialogue/rainy",
+      "dialogue_key": "Sam",
+      "source_text": "Synthetic test: Sam notices the rain.",
+      "source_hash": "sha256:d900f471f4e3e559598fb6cc997ba122d8c5ad47d1165f9f1199eec18cb6fc77",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Sam",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "Synthetic style sample one for Sam.",
+        "Synthetic style sample two for Sam."
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Sam",
+      "locale": "zh-CN",
+      "source_family": "ordinary_daily",
+      "asset_name": "Characters/Dialogue/Sam",
+      "dialogue_key": "Mon",
+      "source_text": "合成测试：Sam 正在计划普通的一天。",
+      "source_hash": "sha256:5828c58169946288df63c8fac022c230fdb8a65ec45717a76bb328e221e2c226",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Sam",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "合成测试：Sam 的风格样本一。",
+        "合成测试：Sam 的风格样本二。"
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Sam",
+      "locale": "zh-CN",
+      "source_family": "rainy_daily",
+      "asset_name": "Characters/Dialogue/rainy",
+      "dialogue_key": "Sam",
+      "source_text": "合成测试：Sam 注意到了雨天。",
+      "source_hash": "sha256:148afcd3308589a838215ff2b468e1c52134165a10d938b83ebf29cb06b0ac0c",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Sam",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "合成测试：Sam 的风格样本一。",
+        "合成测试：Sam 的风格样本二。"
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Sebastian",
+      "locale": "en",
+      "source_family": "ordinary_daily",
+      "asset_name": "Characters/Dialogue/Sebastian",
+      "dialogue_key": "Mon",
+      "source_text": "Synthetic test: Sebastian is planning an ordinary day.",
+      "source_hash": "sha256:bec234c6363cbe86ede8c0242aaab0d87e0953d3d40a09713395174fc7fc67bc",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Sebastian",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "Synthetic style sample one for Sebastian.",
+        "Synthetic style sample two for Sebastian."
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Sebastian",
+      "locale": "en",
+      "source_family": "rainy_daily",
+      "asset_name": "Characters/Dialogue/rainy",
+      "dialogue_key": "Sebastian",
+      "source_text": "Synthetic test: Sebastian notices the rain.",
+      "source_hash": "sha256:aa19d94570ffcff1425a4d99cc2fc39c346d8a4e4c4eb01305db8d0f112adafb",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Sebastian",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "Synthetic style sample one for Sebastian.",
+        "Synthetic style sample two for Sebastian."
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Sebastian",
+      "locale": "zh-CN",
+      "source_family": "ordinary_daily",
+      "asset_name": "Characters/Dialogue/Sebastian",
+      "dialogue_key": "Mon",
+      "source_text": "合成测试：Sebastian 在谈论天气、雪天和农场收获。",
+      "source_hash": "sha256:638b621065b8f3e5c050f867297e40214d8070b9b339115fe7756a9b8d52904f",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Sebastian",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "合成测试：Sebastian 的风格样本一。",
+        "合成测试：Sebastian 的风格样本二。"
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Sebastian",
+      "locale": "zh-CN",
+      "source_family": "rainy_daily",
+      "asset_name": "Characters/Dialogue/rainy",
+      "dialogue_key": "Sebastian",
+      "source_text": "合成测试：Sebastian 注意到了雨声和天气。",
+      "source_hash": "sha256:7b26b719930010997ae107d9a7a01aef7d99aecc0ebf5b9374fe7705fb96cc50",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Sebastian",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "合成测试：Sebastian 的风格样本一。",
+        "合成测试：Sebastian 的风格样本二。"
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Shane",
+      "locale": "en",
+      "source_family": "ordinary_daily",
+      "asset_name": "Characters/Dialogue/Shane",
+      "dialogue_key": "Mon",
+      "source_text": "Synthetic test: Shane is planning an ordinary day.",
+      "source_hash": "sha256:b285d55c47d8447efc538fd0f4a382a525cd8c33b666da44b251bbe82ec52a28",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Shane",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "Synthetic style sample one for Shane.",
+        "Synthetic style sample two for Shane."
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Shane",
+      "locale": "en",
+      "source_family": "rainy_daily",
+      "asset_name": "Characters/Dialogue/rainy",
+      "dialogue_key": "Shane",
+      "source_text": "Synthetic test: Shane notices the rain.$h",
+      "source_hash": "sha256:1c9b79bd269b1de3ccb8e049cd442d6ae599cdfce4119644347c191d6b676354",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Shane",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "Synthetic style sample one for Shane.",
+        "Synthetic style sample two for Shane."
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Shane",
+      "locale": "zh-CN",
+      "source_family": "ordinary_daily",
+      "asset_name": "Characters/Dialogue/Shane",
+      "dialogue_key": "Mon",
+      "source_text": "合成测试：Shane 正在计划普通的一天。",
+      "source_hash": "sha256:9cf8e177cb70609d8ef41223820692167bb108315d70980b7bc302a549e2dbfc",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Shane",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "合成测试：Shane 的风格样本一。",
+        "合成测试：Shane 的风格样本二。"
+      ],
+      "style_provenance": "synthetic"
+    },
+    {
+      "npc_id": "Shane",
+      "locale": "zh-CN",
+      "source_family": "rainy_daily",
+      "asset_name": "Characters/Dialogue/rainy",
+      "dialogue_key": "Shane",
+      "source_text": "合成测试：Shane 注意到了雨天。",
+      "source_hash": "sha256:06b15640d6c468a879c5c735803380b5a7dc68b3e768246d1cce46ed93b2b135",
+      "source_provenance": "synthetic",
+      "style_asset_name": "Characters/Dialogue/Shane",
+      "style_context_season": "spring",
+      "style_context_heart_level": 0,
+      "style_keys": [
+        "Tue",
+        "Wed"
+      ],
+      "style_texts": [
+        "合成测试：Shane 的风格样本一。",
+        "合成测试：Shane 的风格样本二。"
+      ],
+      "style_provenance": "synthetic"
+    }
+  ]
+}

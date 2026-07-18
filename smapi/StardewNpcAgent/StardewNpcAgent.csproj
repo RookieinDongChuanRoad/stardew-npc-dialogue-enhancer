@@ -1,0 +1,134 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <!-- Stardew Valley 1.6 与当前 SMAPI 运行时使用 .NET 6。 -->
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>10.0</LangVersion>
+
+    <!-- 版本同时作为程序集版本和 manifest 中 %ProjectVersion% 的来源。 -->
+    <Version>0.1.0</Version>
+    <AssemblyName>StardewNpcAgent</AssemblyName>
+    <RootNamespace>StardewNpcAgent</RootNamespace>
+
+    <!--
+      这是不可越过的构建边界：普通 build/test 只能生成项目内产物，绝不自动
+      复制到真实游戏 Mods 目录。Harmony 只为已批准且有程序集 fingerprint 门禁的
+      accepted-gift 观察 postfix 启用；对话路径仍由源码边界测试保持零容忍。
+    -->
+    <EnableModDeploy>false</EnableModDeploy>
+    <EnableHarmony>true</EnableHarmony>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!--
+      固定版本，避免 ModBuildConfig 行为随浮动依赖变化。当前已验证的 .NET 6 SDK
+      携带 Roslyn 4.3，而 4.4.0 包中的可选诊断 analyzer 由 Roslyn 4.9 构建，无法被
+      旧编译器加载；因此只排除 analyzer，保留负责游戏引用、manifest 与打包的 build
+      targets。这个兼容性设置不会改变 Mod 的运行时代码或部署边界。
+    -->
+    <PackageReference Include="Pathoschild.Stardew.ModBuildConfig"
+                      Version="4.4.0"
+                      ExcludeAssets="analyzers"
+                      GeneratePathProperty="true"
+                      PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!--
+      运行时兼容门禁使用 SMAPI 随游戏安装的 Mono.Cecil 只读检查 Stardew Valley.dll。
+      Private=false 保证不会把第二份 Cecil 打进 Mod zip；版本漂移由 gift audit fail closed，
+      而不是由 Mod 自带依赖覆盖 SMAPI 的程序集。
+    -->
+    <Reference Include="Mono.Cecil"
+               HintPath="$(GamePath)\smapi-internal\Mono.Cecil.dll"
+               Private="false" />
+  </ItemGroup>
+
+  <!--
+    .NET 6 SDK 的 ResolvePackageAssets 仍会把上述包的 analyzer 加回 Analyzer item，
+    即使 PackageReference 已声明 ExcludeAssets。这里在编译前只移除这一项可选诊断器；
+    build targets 和游戏程序集引用均保留。路径来自 NuGet 自动生成属性，不依赖用户目录。
+  -->
+  <Target Name="RemoveIncompatibleModBuildConfigAnalyzer" BeforeTargets="CoreCompile">
+    <ItemGroup>
+      <Analyzer Remove="$(PkgPathoschild_Stardew_ModBuildConfig)/analyzers/dotnet/cs/SMAPI.ModBuildConfig.Analyzer.dll" />
+    </ItemGroup>
+  </Target>
+
+  <!--
+    ModBuildConfig 4.4.0 在 Unix/macOS 上会生成 origin=Unix、mode=000 的 ZIP 条目。
+    这类归档虽然能列出文件，但标准 unzip 会忠实恢复 000 权限，使 manifest 与 DLL
+    对当前用户不可读。这里使用 MSBuild 自带的 RoslynCodeTaskFactory 原地修正 ZIP
+    central directory，不重新压缩文件，也不引入 Python、shell 或平台专属打包依赖。
+
+    目录使用 0755，普通文件使用 0644，并同时写入 Unix 文件类型位。低 16 位保留
+    ModBuildConfig 已写入的 DOS attributes；这样只修复 Unix 权限语义，不改动内容、
+    文件名、时间戳或部署开关。
+  -->
+  <UsingTask TaskName="NormalizeModZipUnixPermissions"
+             TaskFactory="RoslynCodeTaskFactory"
+             AssemblyFile="$(MSBuildToolsPath)/Microsoft.Build.Tasks.Core.dll">
+    <ParameterGroup>
+      <ZipPath ParameterType="System.String" Required="true" />
+    </ParameterGroup>
+    <Task>
+      <Using Namespace="System" />
+      <Using Namespace="System.IO" />
+      <Using Namespace="System.IO.Compression" />
+      <Code Type="Fragment" Language="cs"><![CDATA[
+        using (FileStream zipStream = new FileStream(
+            ZipPath,
+            FileMode.Open,
+            FileAccess.ReadWrite,
+            FileShare.None))
+        using (ZipArchive archive = new ZipArchive(zipStream, ZipArchiveMode.Update, leaveOpen: false))
+        {
+            //
+            // MSBuild 6 的 inline-task 编译面引用 netstandard 2.0 facade；该 facade 没有公开
+            // ExternalAttributes，但实际 .NET 6 运行时类型有可读写属性。这里仅在构建期
+            // 对这个公开运行时属性做一次反射桥接，避免绑定本机具体 runtime patch 路径。
+            // 若未来运行时不再提供该属性，构建应明确失败，绝不能静默产出 000 权限包。
+            //
+            var externalAttributesProperty = typeof(ZipArchiveEntry).GetProperty("ExternalAttributes");
+            if (externalAttributesProperty == null
+                || !externalAttributesProperty.CanRead
+                || !externalAttributesProperty.CanWrite)
+            {
+                throw new InvalidOperationException(
+                    "当前 .NET 运行时不支持修改 ZipArchiveEntry.ExternalAttributes。");
+            }
+
+            foreach (ZipArchiveEntry entry in archive.Entries)
+            {
+                bool isDirectory = entry.FullName.EndsWith("/", StringComparison.Ordinal);
+
+                // 0040755 = Unix directory + rwxr-xr-x；0100644 = Unix regular file + rw-r--r--。
+                int unixMode = isDirectory ? 16877 : 33188;
+                int existingAttributes = (int)(externalAttributesProperty.GetValue(entry) ?? 0);
+                int normalizedAttributes = (unixMode << 16) | (existingAttributes & 0xFFFF);
+                externalAttributesProperty.SetValue(entry, normalizedAttributes);
+            }
+        }
+      ]]></Code>
+    </Task>
+  </UsingTask>
+
+  <!--
+    ModBuildConfig 的 AfterBuild 先创建 ZIP；本目标随后修复同一个产物。仅 Unix/macOS
+    需要这一步：Windows 归档以 DOS 为 origin，Unix 解压器会为其应用安全默认权限。
+    EnableModZip=false 时不应假定发布包存在。
+  -->
+  <Target Name="NormalizeReleaseZipUnixPermissions"
+          AfterTargets="AfterBuild"
+          Condition="'$(EnableModZip)' == 'true' AND '$(OS)' != 'Windows_NT'">
+    <PropertyGroup>
+      <_ReleaseZipPath>$([System.IO.Path]::Combine('$(ModZipPath)', '$(ModFolderName) $(Version).zip'))</_ReleaseZipPath>
+    </PropertyGroup>
+
+    <Error Condition="!Exists('$(_ReleaseZipPath)')"
+           Text="无法修正 Release zip 权限，因为打包产物不存在：$(_ReleaseZipPath)" />
+    <NormalizeModZipUnixPermissions ZipPath="$(_ReleaseZipPath)" />
+  </Target>
+</Project>

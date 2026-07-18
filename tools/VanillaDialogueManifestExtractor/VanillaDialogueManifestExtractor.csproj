@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>10.0</LangVersion>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+
+    <!--
+      工具只在维护者本机读取已安装游戏。允许命令行用 -p:StardewGamePath 覆盖，
+      默认值不包含用户名，也不会进入生成的共享 fixture。
+    -->
+    <StardewGamePath Condition="'$(StardewGamePath)' == ''">$(HOME)/Library/Application Support/Steam/steamapps/common/Stardew Valley</StardewGamePath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!--
+      使用游戏随附且已验证能读取其压缩 XNB 的 MonoGame ContentManager；Private=true
+      只把 DLL 复制到本工具输出，不会进入 Mod release zip 或正式 Mods 目录。
+    -->
+    <Reference Include="MonoGame.Framework"
+               HintPath="$(StardewGamePath)/Contents/MacOS/MonoGame.Framework.dll"
+               Private="true" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!--
+      直接链接生产规则，避免 extractor 复制并逐渐漂移出第二套 source/template/style
+      放行语义。这里只编译纯逻辑文件，不引用 SMAPI、Stardew 游戏对象或 Mod 入口。
+    -->
+    <Compile Include="..\..\smapi\StardewNpcAgent\Game\DialogueControlCommandScanner.cs"
+             Link="ProductionRules\DialogueControlCommandScanner.cs" />
+    <Compile Include="..\..\smapi\StardewNpcAgent\Game\DialogueKeyClassifier.cs"
+             Link="ProductionRules\DialogueKeyClassifier.cs" />
+    <Compile Include="..\..\smapi\StardewNpcAgent\Game\DialogueSourceClassifier.cs"
+             Link="ProductionRules\DialogueSourceClassifier.cs" />
+    <Compile Include="..\..\smapi\StardewNpcAgent\Game\DialogueTemplatePolicy.cs"
+             Link="ProductionRules\DialogueTemplatePolicy.cs" />
+    <Compile Include="..\..\smapi\StardewNpcAgent\Game\StyleExampleSelector.cs"
+             Link="ProductionRules\StyleExampleSelector.cs" />
+    <Compile Include="..\..\smapi\StardewNpcAgent\Game\VanillaMarriageableNpcRegistry.cs"
+             Link="ProductionRules\VanillaMarriageableNpcRegistry.cs" />
+  </ItemGroup>
+</Project>

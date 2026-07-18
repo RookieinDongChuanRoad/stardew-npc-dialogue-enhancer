@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "request_id": "request-events-spring-15",
+  "save_id": "save-standard-farm-001",
+  "player_id": "player-farmer-001",
+  "events": [
+    {
+      "event_id": "event-gift-abigail-spring-14",
+      "event_type": "gift_given",
+      "event_version": "1",
+      "occurred_day_index": 13,
+      "source": "smapi",
+      "audience_scope": "npc",
+      "audience_npc_id": "Abigail",
+      "payload": {
+        "item_id": "Amethyst",
+        "taste": "love",
+        "friendship_delta": 80
+      }
+    },
+    {
+      "event_id": "event-pantry-completed-spring-14",
+      "event_type": "world_progression",
+      "event_version": "1",
+      "occurred_day_index": 13,
+      "source": "smapi",
+      "audience_scope": "public",
+      "audience_npc_id": null,
+      "payload": {
+        "milestone": "community_center_pantry_completed"
+      }
+    }
+  ]
+}

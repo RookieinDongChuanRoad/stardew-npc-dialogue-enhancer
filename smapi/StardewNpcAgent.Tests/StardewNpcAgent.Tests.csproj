@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>10.0</LangVersion>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- 固定到已支持 net6.0 的版本，保证测试环境可复现。 -->
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
+    <!--
+      兼容性测试需要读取已安装游戏程序集的 IL，而不能加载并执行游戏类型。固定 Mono.Cecil
+      版本只进入测试输出；production Mod 使用 SMAPI 随游戏提供的程序集，不会把 Cecil 打进发布包。
+    -->
+    <PackageReference Include="Mono.Cecil" Version="0.11.6" />
+    <PackageReference Include="xunit" Version="2.9.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\StardewNpcAgent\StardewNpcAgent.csproj" />
+
+    <!--
+      直接链接根目录的共享 fixture，并复制到测试输出目录。测试项目不保存第二份
+      fixture，因此 C# 与 Python 始终消费同一契约真值。
+    -->
+    <None Include="..\..\contracts\fixtures\*.json"
+          Link="Contracts\Fixtures\%(Filename)%(Extension)"
+          CopyToOutputDirectory="PreserveNewest" />
+
+    <!--
+      只把三个含公开 wire integer 的权威 Schema 复制到测试输出，用于核对 C#
+      生产常量。它们属于测试项目，不会进入 ModBuildConfig 生成的 Mod release zip。
+    -->
+    <None Include="..\..\contracts\v1\game_event_batch.schema.json;
+                   ..\..\contracts\v1\dialogue_generation_batch.schema.json;
+                   ..\..\contracts\v1\dialogue_display_ack.schema.json"
+          Link="Contracts\Schemas\%(Filename)%(Extension)"
+          CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:stardew-npc-agent:contracts:v1:dialogue-display-ack-request",
+  "title": "DisplayAckRequest",
+  "$comment": "游戏确认某条增强台词实际展示后的幂等 ACK。标准 Draft 2020-12 校验数值与结构；x-stardew-json-integer-token=true 额外要求运行时只接受不含小数点或指数的 JSON integer token。后端验证 generation、分区、来源指纹与同日展示后，才幂等消费已授权 evidence。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "request_id",
+    "save_id",
+    "player_id",
+    "display_receipt_id",
+    "displayed_day_index",
+    "npc_id",
+    "source_hash"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "request_id": {
+      "$ref": "#/$defs/non_blank_string"
+    },
+    "save_id": {
+      "$ref": "#/$defs/non_blank_string"
+    },
+    "player_id": {
+      "$ref": "#/$defs/non_blank_string"
+    },
+    "display_receipt_id": {
+      "$ref": "#/$defs/non_blank_string"
+    },
+    "displayed_day_index": {
+      "$comment": "展示日采用非负 Int32 闭区间，与事件日和生成日保持一致。",
+      "type": "integer",
+      "x-stardew-json-integer-token": true,
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "npc_id": {
+      "$ref": "#/$defs/non_blank_string"
+    },
+    "source_hash": {
+      "$ref": "#/$defs/non_blank_string"
+    }
+  },
+  "$defs": {
+    "non_blank_string": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S",
+      "allOf": [
+        {
+          "not": {
+            "pattern": "^\\s"
+          }
+        },
+        {
+          "not": {
+            "pattern": "\\s$"
+          }
+        }
+      ]
+    }
+  }
+}

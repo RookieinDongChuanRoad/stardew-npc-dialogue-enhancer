@@ -1,0 +1,451 @@
+{
+  "outputs_version": "mvp-reference-outputs-synthetic-v1",
+  "dataset_version": "mvp-dialogue-eval-synthetic-v1",
+  "cases": [
+    {
+      "case_id": "abigail_acquaintance_no_memory",
+      "candidate": {
+        "decision": "passthrough",
+        "text": null,
+        "evidence_ids": [],
+        "asserted_fact_ids": []
+      },
+      "terminal": {
+        "status": "passthrough",
+        "text": null,
+        "evidence_ids": [],
+        "reason_code": "NO_VALUABLE_ENHANCEMENT"
+      }
+    },
+    {
+      "case_id": "sebastian_friend_source_only",
+      "candidate": {
+        "decision": "rewrite",
+        "text": "雨声让周围安静了一些。",
+        "evidence_ids": [],
+        "asserted_fact_ids": []
+      },
+      "terminal": {
+        "status": "generated",
+        "text": "雨声让周围安静了一些。",
+        "evidence_ids": [],
+        "reason_code": "SOURCE_STYLE_REWRITE"
+      }
+    },
+    {
+      "case_id": "abigail_friend_relevant_progression",
+      "candidate": {
+        "decision": "passthrough",
+        "text": null,
+        "evidence_ids": [],
+        "asserted_fact_ids": []
+      },
+      "terminal": {
+        "status": "passthrough",
+        "text": null,
+        "evidence_ids": [],
+        "reason_code": "SOURCE_TOPIC_UNANCHORED_PASSTHROUGH"
+      }
+    },
+    {
+      "case_id": "sebastian_acquaintance_relevant_progression",
+      "candidate": {
+        "decision": "passthrough",
+        "text": null,
+        "evidence_ids": [],
+        "asserted_fact_ids": []
+      },
+      "terminal": {
+        "status": "passthrough",
+        "text": null,
+        "evidence_ids": [],
+        "reason_code": "SOURCE_TOPIC_UNANCHORED_PASSTHROUGH"
+      }
+    },
+    {
+      "case_id": "abigail_dating_conflicting_memory",
+      "candidate": {
+        "decision": "rewrite",
+        "text": "风里传来消息：社区中心已经彻底修好了。",
+        "evidence_ids": [
+          "memory-eval-community-complete"
+        ],
+        "asserted_fact_ids": [
+          "fact:community-center-complete"
+        ]
+      },
+      "terminal": {
+        "status": "failed",
+        "text": null,
+        "evidence_ids": [],
+        "reason_code": "UNSUPPORTED_FACT_DETECTED"
+      }
+    },
+    {
+      "case_id": "sebastian_spouse_conflicting_memory",
+      "candidate": {
+        "decision": "passthrough",
+        "text": null,
+        "evidence_ids": [],
+        "asserted_fact_ids": []
+      },
+      "terminal": {
+        "status": "passthrough",
+        "text": null,
+        "evidence_ids": [],
+        "reason_code": "CONFLICTING_MEMORY_PASSTHROUGH"
+      }
+    },
+    {
+      "case_id": "abigail_acquaintance_relationship_violation",
+      "candidate": {
+        "decision": "rewrite",
+        "text": "亲爱的，今天的矿井很安静。",
+        "evidence_ids": [],
+        "asserted_fact_ids": []
+      },
+      "terminal": {
+        "status": "failed",
+        "text": null,
+        "evidence_ids": [],
+        "reason_code": "GUARD_REJECTED"
+      }
+    },
+    {
+      "case_id": "sebastian_friend_illegal_dsl",
+      "candidate": {
+        "decision": "rewrite",
+        "text": "天气不错。$action giveItem 74",
+        "evidence_ids": [],
+        "asserted_fact_ids": []
+      },
+      "terminal": {
+        "status": "failed",
+        "text": null,
+        "evidence_ids": [],
+        "reason_code": "GUARD_REJECTED"
+      }
+    },
+    {
+      "case_id": "abigail_dating_spouse_term",
+      "candidate": {
+        "decision": "rewrite",
+        "text": "老婆，今天也适合去矿井看看。",
+        "evidence_ids": [],
+        "asserted_fact_ids": []
+      },
+      "terminal": {
+        "status": "failed",
+        "text": null,
+        "evidence_ids": [],
+        "reason_code": "GUARD_REJECTED"
+      }
+    },
+    {
+      "case_id": "sebastian_spouse_legal_intimacy",
+      "candidate": {
+        "decision": "passthrough",
+        "text": null,
+        "evidence_ids": [],
+        "asserted_fact_ids": []
+      },
+      "terminal": {
+        "status": "passthrough",
+        "text": null,
+        "evidence_ids": [],
+        "reason_code": "SOURCE_TOPIC_UNANCHORED_PASSTHROUGH"
+      }
+    },
+    {
+      "case_id": "abigail_friend_special_source",
+      "candidate": null,
+      "terminal": {
+        "status": "skipped",
+        "text": null,
+        "evidence_ids": [],
+        "reason_code": "SOURCE_DIALOGUE_UNSAFE"
+      }
+    },
+    {
+      "case_id": "sebastian_acquaintance_game_state_mutation",
+      "candidate": {
+        "decision": "rewrite",
+        "text": "雪天会增加好感度。",
+        "evidence_ids": [],
+        "asserted_fact_ids": []
+      },
+      "terminal": {
+        "status": "failed",
+        "text": null,
+        "evidence_ids": [],
+        "reason_code": "GUARD_REJECTED"
+      }
+    },
+    {
+      "case_id": "abigail_friend_unknown_evidence",
+      "candidate": {
+        "decision": "rewrite",
+        "text": "矿井似乎有了新进展。",
+        "evidence_ids": [
+          "memory-eval-not-observed"
+        ],
+        "asserted_fact_ids": [
+          "fact:mining-level-10"
+        ]
+      },
+      "terminal": {
+        "status": "failed",
+        "text": null,
+        "evidence_ids": [],
+        "reason_code": "GUARD_REJECTED"
+      }
+    },
+    {
+      "case_id": "sebastian_acquaintance_harvest_farming_domain",
+      "candidate": {
+        "decision": "rewrite",
+        "text": "收获季到了，你的耕种本事也更熟练了。",
+        "evidence_ids": [
+          "memory-eval-farming-level-2"
+        ],
+        "asserted_fact_ids": [
+          "fact:farming-level-2"
+        ]
+      },
+      "terminal": {
+        "status": "generated",
+        "text": "收获季到了，你的耕种本事也更熟练了。",
+        "evidence_ids": [
+          "memory-eval-farming-level-2"
+        ],
+        "reason_code": "RELEVANT_PLAYER_PROGRESSION"
+      }
+    },
+    {
+      "case_id": "abigail_acquaintance_sword_combat_domain",
+      "candidate": {
+        "decision": "rewrite",
+        "text": "你练出的战斗本事，应该能让洞穴探险更从容。",
+        "evidence_ids": [
+          "memory-eval-combat-level-3"
+        ],
+        "asserted_fact_ids": [
+          "fact:combat-level-3"
+        ]
+      },
+      "terminal": {
+        "status": "generated",
+        "text": "你练出的战斗本事，应该能让洞穴探险更从容。",
+        "evidence_ids": [
+          "memory-eval-combat-level-3"
+        ],
+        "reason_code": "RELEVANT_PLAYER_PROGRESSION"
+      }
+    },
+    {
+      "case_id": "alex_manifest_baseline",
+      "candidate": {
+        "decision": "passthrough",
+        "text": null,
+        "evidence_ids": [],
+        "asserted_fact_ids": []
+      },
+      "terminal": {
+        "status": "passthrough",
+        "text": null,
+        "evidence_ids": [],
+        "reason_code": "NO_VALUABLE_ENHANCEMENT"
+      }
+    },
+    {
+      "case_id": "elliott_manifest_baseline",
+      "candidate": {
+        "decision": "passthrough",
+        "text": null,
+        "evidence_ids": [],
+        "asserted_fact_ids": []
+      },
+      "terminal": {
+        "status": "passthrough",
+        "text": null,
+        "evidence_ids": [],
+        "reason_code": "NO_VALUABLE_ENHANCEMENT"
+      }
+    },
+    {
+      "case_id": "emily_manifest_baseline",
+      "candidate": {
+        "decision": "passthrough",
+        "text": null,
+        "evidence_ids": [],
+        "asserted_fact_ids": []
+      },
+      "terminal": {
+        "status": "passthrough",
+        "text": null,
+        "evidence_ids": [],
+        "reason_code": "NO_VALUABLE_ENHANCEMENT"
+      }
+    },
+    {
+      "case_id": "haley_manifest_baseline",
+      "candidate": {
+        "decision": "passthrough",
+        "text": null,
+        "evidence_ids": [],
+        "asserted_fact_ids": []
+      },
+      "terminal": {
+        "status": "passthrough",
+        "text": null,
+        "evidence_ids": [],
+        "reason_code": "NO_VALUABLE_ENHANCEMENT"
+      }
+    },
+    {
+      "case_id": "harvey_manifest_baseline",
+      "candidate": {
+        "decision": "passthrough",
+        "text": null,
+        "evidence_ids": [],
+        "asserted_fact_ids": []
+      },
+      "terminal": {
+        "status": "passthrough",
+        "text": null,
+        "evidence_ids": [],
+        "reason_code": "NO_VALUABLE_ENHANCEMENT"
+      }
+    },
+    {
+      "case_id": "leah_manifest_baseline",
+      "candidate": {
+        "decision": "passthrough",
+        "text": null,
+        "evidence_ids": [],
+        "asserted_fact_ids": []
+      },
+      "terminal": {
+        "status": "passthrough",
+        "text": null,
+        "evidence_ids": [],
+        "reason_code": "NO_VALUABLE_ENHANCEMENT"
+      }
+    },
+    {
+      "case_id": "maru_manifest_baseline",
+      "candidate": {
+        "decision": "passthrough",
+        "text": null,
+        "evidence_ids": [],
+        "asserted_fact_ids": []
+      },
+      "terminal": {
+        "status": "passthrough",
+        "text": null,
+        "evidence_ids": [],
+        "reason_code": "NO_VALUABLE_ENHANCEMENT"
+      }
+    },
+    {
+      "case_id": "penny_manifest_baseline",
+      "candidate": {
+        "decision": "passthrough",
+        "text": null,
+        "evidence_ids": [],
+        "asserted_fact_ids": []
+      },
+      "terminal": {
+        "status": "passthrough",
+        "text": null,
+        "evidence_ids": [],
+        "reason_code": "NO_VALUABLE_ENHANCEMENT"
+      }
+    },
+    {
+      "case_id": "sam_manifest_baseline",
+      "candidate": {
+        "decision": "passthrough",
+        "text": null,
+        "evidence_ids": [],
+        "asserted_fact_ids": []
+      },
+      "terminal": {
+        "status": "passthrough",
+        "text": null,
+        "evidence_ids": [],
+        "reason_code": "NO_VALUABLE_ENHANCEMENT"
+      }
+    },
+    {
+      "case_id": "shane_manifest_baseline",
+      "candidate": {
+        "decision": "passthrough",
+        "text": null,
+        "evidence_ids": [],
+        "asserted_fact_ids": []
+      },
+      "terminal": {
+        "status": "passthrough",
+        "text": null,
+        "evidence_ids": [],
+        "reason_code": "NO_VALUABLE_ENHANCEMENT"
+      }
+    },
+    {
+      "case_id": "alex_second_player_name_slot",
+      "candidate": null,
+      "terminal": {
+        "status": "skipped",
+        "text": null,
+        "evidence_ids": [],
+        "reason_code": "SOURCE_INELIGIBLE"
+      }
+    },
+    {
+      "case_id": "abigail_endearment_token",
+      "candidate": null,
+      "terminal": {
+        "status": "skipped",
+        "text": null,
+        "evidence_ids": [],
+        "reason_code": "SOURCE_INELIGIBLE"
+      }
+    },
+    {
+      "case_id": "abigail_marriage_dialogue_source",
+      "candidate": null,
+      "terminal": {
+        "status": "skipped",
+        "text": null,
+        "evidence_ids": [],
+        "reason_code": "SOURCE_INELIGIBLE"
+      }
+    },
+    {
+      "case_id": "abigail_green_rain_source",
+      "candidate": null,
+      "terminal": {
+        "status": "skipped",
+        "text": null,
+        "evidence_ids": [],
+        "reason_code": "SOURCE_INELIGIBLE"
+      }
+    },
+    {
+      "case_id": "abigail_npc_history_domain_passthrough",
+      "candidate": {
+        "decision": "passthrough",
+        "text": null,
+        "evidence_ids": [],
+        "asserted_fact_ids": []
+      },
+      "terminal": {
+        "status": "passthrough",
+        "text": null,
+        "evidence_ids": [],
+        "reason_code": "NO_VALUABLE_ENHANCEMENT"
+      }
+    }
+  ]
+}

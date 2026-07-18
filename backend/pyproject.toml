@@ -1,0 +1,54 @@
+[project]
+name = "stardew-npc-agent"
+version = "0.1.0"
+description = "星露谷 NPC 记忆增强系统的本地 FastAPI 后端"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "aiosqlite>=0.22,<0.23",
+    "alembic>=1.18,<1.19",
+    "fastapi>=0.138,<0.139",
+    "langchain>=1.3.13,<1.4",
+    "langchain-openai>=1.3.5,<1.4",
+    # Agent retry middleware directly classifies the adapter's transport exceptions;
+    # declare the SDK explicitly instead of relying on langchain-openai's transitive dependency.
+    "openai>=2.45,<3",
+    "pydantic>=2.13,<2.14",
+    "pydantic-settings>=2.14,<2.15",
+    # SQLAlchemy async engine 仍使用 greenlet 在同步 DBAPI 适配层切换上下文；
+    # 显式选择 asyncio extra，避免干净环境中首次连库才发现运行时缺依赖。
+    "sqlalchemy[asyncio]>=2.0,<2.1",
+    # Phase 7 只锁定显式本地 ASGI 启动器；import main 仍不会自动监听端口。
+    "uvicorn>=0.41,<0.42",
+]
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28,<0.29",
+    "jsonschema>=4.26,<4.27",
+    "mypy>=1.20,<1.21",
+    "pytest>=9.1,<9.2",
+    "pytest-asyncio>=1.4,<1.5",
+    "ruff>=0.15,<0.16",
+]
+
+[build-system]
+requires = ["hatchling>=1.29,<1.30"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/stardew_npc_agent"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["B", "E", "F", "I", "UP"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+files = ["src", "evals"]

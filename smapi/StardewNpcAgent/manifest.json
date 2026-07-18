@@ -1,0 +1,12 @@
+{
+  "$schema": "https://smapi.io/schemas/manifest.json",
+  "Name": "Stardew NPC Agent",
+  "Author": "rookieindongchuanroad",
+  "Version": "%ProjectVersion%",
+  "Description": "为目标 NPC 提供可降级的记忆增强日常对话。",
+  "UniqueID": "Liurongfu.StardewNpcAgent",
+  "EntryDll": "StardewNpcAgent.dll",
+  "MinimumApiVersion": "4.5.2",
+  "MinimumGameVersion": "1.6.15",
+  "UpdateKeys": []
+}

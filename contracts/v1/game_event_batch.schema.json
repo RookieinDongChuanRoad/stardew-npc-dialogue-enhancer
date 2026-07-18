@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:stardew-npc-agent:contracts:v1:game-event-batch-request",
+  "title": "GameEventBatchRequest",
+  "$comment": "游戏侧提交结构化事实事件的 v1 wire contract。标准 Draft 2020-12 校验数值与结构；x-stardew-json-integer-token=true 额外要求运行时只接受不含小数点或指数的 JSON integer token。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "request_id", "save_id", "player_id", "events"],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "request_id": {
+      "$ref": "#/$defs/non_blank_string"
+    },
+    "save_id": {
+      "$ref": "#/$defs/non_blank_string"
+    },
+    "player_id": {
+      "$ref": "#/$defs/non_blank_string"
+    },
+    "events": {
+      "$comment": "单批最多 64 条，用于限制 SMAPI 离线 outbox 的单次刷新规模，并缩短 SQLite 单写者事务占用；修改时必须同步 JSON Schema、Python 与 C#。",
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 64,
+      "items": {
+        "$ref": "#/$defs/game_event"
+      }
+    }
+  },
+  "$defs": {
+    "non_blank_string": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S",
+      "allOf": [
+        {
+          "not": {
+            "pattern": "^\\s"
+          }
+        },
+        {
+          "not": {
+            "pattern": "\\s$"
+          }
+        }
+      ]
+    },
+    "game_event": {
+      "$comment": "audience_npc_id 明确允许 null；public 事件不使用星号等魔法 NPC ID。",
+      "type": "object",
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "audience_scope": {
+                "const": "public"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "audience_npc_id": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "audience_scope": {
+                "const": "npc"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "audience_npc_id": {
+                "$ref": "#/$defs/non_blank_string"
+              }
+            }
+          }
+        }
+      ],
+      "required": [
+        "event_id",
+        "event_type",
+        "event_version",
+        "occurred_day_index",
+        "source",
+        "audience_scope",
+        "audience_npc_id",
+        "payload"
+      ],
+      "properties": {
+        "event_id": {
+          "$ref": "#/$defs/non_blank_string"
+        },
+        "event_type": {
+          "$ref": "#/$defs/non_blank_string"
+        },
+        "event_version": {
+          "$ref": "#/$defs/non_blank_string"
+        },
+        "occurred_day_index": {
+          "$comment": "C# DTO 使用 Int32；Python 与 Schema 必须采用同一最低共同上界。",
+          "type": "integer",
+          "x-stardew-json-integer-token": true,
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "source": {
+          "$ref": "#/$defs/non_blank_string"
+        },
+        "audience_scope": {
+          "enum": ["public", "npc"]
+        },
+        "audience_npc_id": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/non_blank_string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "payload": {
+          "type": "object"
+        }
+      }
+    }
+  }
+}

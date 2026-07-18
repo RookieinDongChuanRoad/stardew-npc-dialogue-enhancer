@@ -1,0 +1,44 @@
+# macOS and editor-local files
+.DS_Store
+*.user
+*.suo
+/.obsidian/
+
+# Python environments and generated caches
+/backend/.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local runtime databases and secrets
+/backend/stardew_npc_agent.sqlite3*
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# .NET build output
+**/bin/
+**/obj/
+
+# Local diagnostics and generated scratch artifacts
+/.worktrees/
+/.codex_tmp/
+/.tools/
+/tmp/
+*.log
+
+# Portable local credentials, crash artifacts, and user-generated manifests
+.envrc
+.direnv/
+*.p12
+*.pfx
+credentials*.json
+/.local/
+*.bak
+*.dmp

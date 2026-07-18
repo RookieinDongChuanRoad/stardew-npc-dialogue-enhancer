@@ -1,0 +1,1792 @@
+{
+  "dataset_version": "mvp-dialogue-eval-synthetic-v1",
+  "cases": [
+    {
+      "case_id": "abigail_acquaintance_no_memory",
+      "npc_id": "Abigail",
+      "relationship_stage": "acquaintance",
+      "weather": "clear",
+      "memory_scenario": "none",
+      "dialogue_kind": "ordinary",
+      "request": {
+        "schema_version": "1.0",
+        "request_id": "eval-request-abigail-acquaintance-none",
+        "save_id": "eval-save",
+        "player_id": "eval-player",
+        "game_day_index": 10,
+        "required_memory_revision": 0,
+        "stable_day_context": {
+          "season": "spring",
+          "weather": "clear",
+        "locale": "zh-CN",
+          "progression_signals": {}
+        },
+        "items": [
+          {
+            "task_id": "eval-task-abigail-acquaintance-none",
+            "npc_id": "Abigail",
+            "source_dialogue": {
+              "asset_name": "Characters/Dialogue/Abigail",
+              "dialogue_key": "Mon",
+              "text": "合成测试：Abigail 想聊聊风、矿井、洞穴探险和农场计划。",
+              "source_hash": "sha256:16f378f59a7ae04caa19e7ac2580c6b1eef465d2fb323a9347abedb336e42cca"
+            },
+            "relationship_snapshot": {
+              "friendship_points": 500,
+              "relationship_stage": "acquaintance"
+            },
+            "style_examples": [
+              "合成测试：Abigail 的风格样本一。",
+              "合成测试：Abigail 的风格样本二。"
+            ],
+            "memory_signals": []
+          }
+        ]
+      },
+      "observed_evidence": [],
+      "expected": {
+        "terminal_status": "passthrough",
+        "reason_code": "NO_VALUABLE_ENHANCEMENT",
+        "guard_error_codes": [],
+        "allowed_fact_ids": []
+      },
+      "source_family": "ordinary_daily",
+      "source_provenance": "synthetic_fixture"
+    },
+    {
+      "case_id": "sebastian_friend_source_only",
+      "npc_id": "Sebastian",
+      "relationship_stage": "friend",
+      "weather": "rain",
+      "memory_scenario": "none",
+      "dialogue_kind": "ordinary",
+      "request": {
+        "schema_version": "1.0",
+        "request_id": "eval-request-sebastian-friend-source",
+        "save_id": "eval-save",
+        "player_id": "eval-player",
+        "game_day_index": 10,
+        "required_memory_revision": 0,
+        "stable_day_context": {
+          "season": "spring",
+          "weather": "rain",
+          "locale": "zh-CN",
+          "progression_signals": {}
+        },
+        "items": [
+          {
+            "task_id": "eval-task-sebastian-friend-source",
+            "npc_id": "Sebastian",
+            "source_dialogue": {
+              "asset_name": "Characters/Dialogue/rainy",
+              "dialogue_key": "Sebastian",
+              "text": "合成测试：Sebastian 注意到了雨声和天气。",
+              "source_hash": "sha256:7b26b719930010997ae107d9a7a01aef7d99aecc0ebf5b9374fe7705fb96cc50"
+            },
+            "relationship_snapshot": {
+              "friendship_points": 1250,
+              "relationship_stage": "friend"
+            },
+            "style_examples": [
+              "合成测试：Sebastian 的风格样本一。",
+              "合成测试：Sebastian 的风格样本二。"
+            ],
+            "memory_signals": []
+          }
+        ]
+      },
+      "observed_evidence": [],
+      "expected": {
+        "terminal_status": "generated",
+        "reason_code": "SOURCE_STYLE_REWRITE",
+        "guard_error_codes": [],
+        "allowed_fact_ids": []
+      },
+      "source_family": "rainy_daily",
+      "source_provenance": "synthetic_fixture"
+    },
+    {
+      "case_id": "abigail_friend_relevant_progression",
+      "npc_id": "Abigail",
+      "relationship_stage": "friend",
+      "weather": "rain",
+      "memory_scenario": "relevant",
+      "dialogue_kind": "ordinary",
+      "request": {
+        "schema_version": "1.0",
+        "request_id": "eval-request-abigail-friend-progression",
+        "save_id": "eval-save",
+        "player_id": "eval-player",
+        "game_day_index": 10,
+        "required_memory_revision": 1,
+        "stable_day_context": {
+          "season": "spring",
+          "weather": "rain",
+          "locale": "zh-CN",
+          "progression_signals": {
+            "mine_level": 5
+          }
+        },
+        "items": [
+          {
+            "task_id": "eval-task-abigail-friend-progression",
+            "npc_id": "Abigail",
+            "source_dialogue": {
+              "asset_name": "Characters/Dialogue/Abigail",
+              "dialogue_key": "Mon",
+              "text": "合成测试：Abigail 想聊聊风、矿井、洞穴探险和农场计划。",
+              "source_hash": "sha256:16f378f59a7ae04caa19e7ac2580c6b1eef465d2fb323a9347abedb336e42cca"
+            },
+            "relationship_snapshot": {
+              "friendship_points": 1250,
+              "relationship_stage": "friend"
+            },
+            "style_examples": [
+              "合成测试：Abigail 的风格样本一。",
+              "合成测试：Abigail 的风格样本二。"
+            ],
+            "memory_signals": [
+              {
+                "event_type": "world_progression"
+              }
+            ]
+          }
+        ]
+      },
+      "observed_evidence": [
+        {
+          "evidence_id": "memory-eval-mining-level-5",
+          "evidence_type": "world_progression",
+          "source_event_ids": [
+            "event-eval-mining-level-5"
+          ],
+          "summary": "第 9 天，世界进度达成：skill_mining_level_5。",
+          "occurred_day_index": 9,
+          "tags": [
+            "progression",
+            "milestone:skill_mining_level_5"
+          ],
+          "visibility_scope": "public"
+        }
+      ],
+      "expected": {
+        "terminal_status": "passthrough",
+        "reason_code": "SOURCE_TOPIC_UNANCHORED_PASSTHROUGH",
+        "guard_error_codes": [],
+        "allowed_fact_ids": [
+          "fact:mining-level-5"
+        ]
+      },
+      "source_family": "ordinary_daily",
+      "source_provenance": "synthetic_fixture"
+    },
+    {
+      "case_id": "sebastian_acquaintance_relevant_progression",
+      "npc_id": "Sebastian",
+      "relationship_stage": "acquaintance",
+      "weather": "snow",
+      "memory_scenario": "relevant",
+      "dialogue_kind": "ordinary",
+      "request": {
+        "schema_version": "1.0",
+        "request_id": "eval-request-sebastian-acquaintance-progression",
+        "save_id": "eval-save",
+        "player_id": "eval-player",
+        "game_day_index": 20,
+        "required_memory_revision": 2,
+        "stable_day_context": {
+          "season": "spring",
+          "weather": "snow",
+          "locale": "zh-CN",
+          "progression_signals": {
+            "community_room": "complete"
+          }
+        },
+        "items": [
+          {
+            "task_id": "eval-task-sebastian-acquaintance-progression",
+            "npc_id": "Sebastian",
+            "source_dialogue": {
+              "asset_name": "Characters/Dialogue/Sebastian",
+              "dialogue_key": "Mon",
+              "text": "合成测试：Sebastian 在谈论天气、雪天和农场收获。",
+              "source_hash": "sha256:638b621065b8f3e5c050f867297e40214d8070b9b339115fe7756a9b8d52904f"
+            },
+            "relationship_snapshot": {
+              "friendship_points": 500,
+              "relationship_stage": "acquaintance"
+            },
+            "style_examples": [
+              "合成测试：Sebastian 的风格样本一。",
+              "合成测试：Sebastian 的风格样本二。"
+            ],
+            "memory_signals": [
+              {
+                "event_type": "world_progression"
+              }
+            ]
+          }
+        ]
+      },
+      "observed_evidence": [
+        {
+          "evidence_id": "memory-eval-community-room",
+          "evidence_type": "world_progression",
+          "source_event_ids": [
+            "event-eval-community-room"
+          ],
+          "summary": "第 19 天，世界进度达成：community_center_room_complete。",
+          "occurred_day_index": 19,
+          "tags": [
+            "progression",
+            "milestone:community_center_room_complete"
+          ],
+          "visibility_scope": "public",
+          "memory_domain": "world_progression",
+          "memory_kind": "facility_unlocked",
+          "subject_namespace": "facility_id",
+          "subject_value": "community_center"
+        }
+      ],
+      "expected": {
+        "terminal_status": "passthrough",
+        "reason_code": "SOURCE_TOPIC_UNANCHORED_PASSTHROUGH",
+        "guard_error_codes": [],
+        "allowed_fact_ids": [
+          "fact:community-center-room-complete"
+        ]
+      },
+      "source_family": "ordinary_daily",
+      "source_provenance": "synthetic_fixture"
+    },
+    {
+      "case_id": "abigail_dating_conflicting_memory",
+      "npc_id": "Abigail",
+      "relationship_stage": "dating",
+      "weather": "clear",
+      "memory_scenario": "conflicting",
+      "dialogue_kind": "ordinary",
+      "request": {
+        "schema_version": "1.0",
+        "request_id": "eval-request-abigail-dating-conflict",
+        "save_id": "eval-save",
+        "player_id": "eval-player",
+        "game_day_index": 30,
+        "required_memory_revision": 4,
+        "stable_day_context": {
+          "season": "spring",
+          "weather": "clear",
+          "locale": "zh-CN",
+          "progression_signals": {}
+        },
+        "items": [
+          {
+            "task_id": "eval-task-abigail-dating-conflict",
+            "npc_id": "Abigail",
+            "source_dialogue": {
+              "asset_name": "Characters/Dialogue/Abigail",
+              "dialogue_key": "Mon",
+              "text": "合成测试：Abigail 想聊聊风、矿井、洞穴探险和农场计划。",
+              "source_hash": "sha256:16f378f59a7ae04caa19e7ac2580c6b1eef465d2fb323a9347abedb336e42cca"
+            },
+            "relationship_snapshot": {
+              "friendship_points": 2000,
+              "relationship_stage": "dating"
+            },
+            "style_examples": [
+              "合成测试：Abigail 的风格样本一。",
+              "合成测试：Abigail 的风格样本二。"
+            ],
+            "memory_signals": [
+              {
+                "event_type": "world_progression",
+                "conflicting": true
+              }
+            ]
+          }
+        ]
+      },
+      "observed_evidence": [
+        {
+          "evidence_id": "memory-eval-community-complete",
+          "evidence_type": "world_progression",
+          "source_event_ids": [
+            "event-eval-community-complete"
+          ],
+          "summary": "较早记录称社区中心已经完成。",
+          "occurred_day_index": 27,
+          "tags": [
+            "progression",
+            "community-center",
+            "complete"
+          ],
+          "visibility_scope": "public"
+        },
+        {
+          "evidence_id": "memory-eval-community-incomplete",
+          "evidence_type": "world_progression",
+          "source_event_ids": [
+            "event-eval-community-incomplete"
+          ],
+          "summary": "较新记录称社区中心仍未完成。",
+          "occurred_day_index": 29,
+          "tags": [
+            "progression",
+            "community-center",
+            "incomplete"
+          ],
+          "visibility_scope": "public"
+        }
+      ],
+      "expected": {
+        "terminal_status": "failed",
+        "reason_code": "UNSUPPORTED_FACT_DETECTED",
+        "guard_error_codes": [],
+        "allowed_fact_ids": []
+      },
+      "source_family": "ordinary_daily",
+      "source_provenance": "synthetic_fixture"
+    },
+    {
+      "case_id": "sebastian_spouse_conflicting_memory",
+      "npc_id": "Sebastian",
+      "relationship_stage": "spouse",
+      "weather": "rain",
+      "memory_scenario": "conflicting",
+      "dialogue_kind": "ordinary",
+      "request": {
+        "schema_version": "1.0",
+        "request_id": "eval-request-sebastian-spouse-conflict",
+        "save_id": "eval-save",
+        "player_id": "eval-player",
+        "game_day_index": 40,
+        "required_memory_revision": 6,
+        "stable_day_context": {
+          "season": "spring",
+          "weather": "rain",
+          "locale": "zh-CN",
+          "progression_signals": {}
+        },
+        "items": [
+          {
+            "task_id": "eval-task-sebastian-spouse-conflict",
+            "npc_id": "Sebastian",
+            "source_dialogue": {
+              "asset_name": "Characters/Dialogue/Sebastian",
+              "dialogue_key": "Mon",
+              "text": "合成测试：Sebastian 在谈论天气、雪天和农场收获。",
+              "source_hash": "sha256:638b621065b8f3e5c050f867297e40214d8070b9b339115fe7756a9b8d52904f"
+            },
+            "relationship_snapshot": {
+              "friendship_points": 2500,
+              "relationship_stage": "spouse"
+            },
+            "style_examples": [
+              "合成测试：Sebastian 的风格样本一。",
+              "合成测试：Sebastian 的风格样本二。"
+            ],
+            "memory_signals": [
+              {
+                "event_type": "world_progression",
+                "conflicting": true
+              }
+            ]
+          }
+        ]
+      },
+      "observed_evidence": [
+        {
+          "evidence_id": "memory-eval-bridge-open",
+          "evidence_type": "world_progression",
+          "source_event_ids": [
+            "event-eval-bridge-open"
+          ],
+          "summary": "较早记录称桥已经开放。",
+          "occurred_day_index": 37,
+          "tags": [
+            "progression",
+            "bridge",
+            "open"
+          ],
+          "visibility_scope": "public"
+        },
+        {
+          "evidence_id": "memory-eval-bridge-closed",
+          "evidence_type": "world_progression",
+          "source_event_ids": [
+            "event-eval-bridge-closed"
+          ],
+          "summary": "较新记录称桥仍关闭。",
+          "occurred_day_index": 39,
+          "tags": [
+            "progression",
+            "bridge",
+            "closed"
+          ],
+          "visibility_scope": "public"
+        }
+      ],
+      "expected": {
+        "terminal_status": "passthrough",
+        "reason_code": "CONFLICTING_MEMORY_PASSTHROUGH",
+        "guard_error_codes": [],
+        "allowed_fact_ids": []
+      },
+      "source_family": "ordinary_daily",
+      "source_provenance": "synthetic_fixture"
+    },
+    {
+      "case_id": "abigail_acquaintance_relationship_violation",
+      "npc_id": "Abigail",
+      "relationship_stage": "acquaintance",
+      "weather": "green_rain",
+      "memory_scenario": "none",
+      "dialogue_kind": "ordinary",
+      "request": {
+        "schema_version": "1.0",
+        "request_id": "eval-request-abigail-acquaintance-relationship",
+        "save_id": "eval-save",
+        "player_id": "eval-player",
+        "game_day_index": 50,
+        "required_memory_revision": 0,
+        "stable_day_context": {
+          "season": "spring",
+          "weather": "green_rain",
+          "locale": "zh-CN",
+          "progression_signals": {}
+        },
+        "items": [
+          {
+            "task_id": "eval-task-abigail-acquaintance-relationship",
+            "npc_id": "Abigail",
+            "source_dialogue": {
+              "asset_name": "Characters/Dialogue/Abigail",
+              "dialogue_key": "Mon",
+              "text": "合成测试：Abigail 想聊聊风、矿井、洞穴探险和农场计划。",
+              "source_hash": "sha256:16f378f59a7ae04caa19e7ac2580c6b1eef465d2fb323a9347abedb336e42cca"
+            },
+            "relationship_snapshot": {
+              "friendship_points": 500,
+              "relationship_stage": "acquaintance"
+            },
+            "style_examples": [
+              "合成测试：Abigail 的风格样本一。",
+              "合成测试：Abigail 的风格样本二。"
+            ],
+            "memory_signals": []
+          }
+        ]
+      },
+      "observed_evidence": [],
+      "expected": {
+        "terminal_status": "failed",
+        "reason_code": "GUARD_REJECTED",
+        "guard_error_codes": [
+          "RELATIONSHIP_POLICY_VIOLATION"
+        ],
+        "allowed_fact_ids": []
+      },
+      "source_family": "ordinary_daily",
+      "source_provenance": "synthetic_fixture"
+    },
+    {
+      "case_id": "sebastian_friend_illegal_dsl",
+      "npc_id": "Sebastian",
+      "relationship_stage": "friend",
+      "weather": "clear",
+      "memory_scenario": "none",
+      "dialogue_kind": "ordinary",
+      "request": {
+        "schema_version": "1.0",
+        "request_id": "eval-request-sebastian-friend-dsl",
+        "save_id": "eval-save",
+        "player_id": "eval-player",
+        "game_day_index": 60,
+        "required_memory_revision": 0,
+        "stable_day_context": {
+          "season": "spring",
+          "weather": "clear",
+          "locale": "zh-CN",
+          "progression_signals": {}
+        },
+        "items": [
+          {
+            "task_id": "eval-task-sebastian-friend-dsl",
+            "npc_id": "Sebastian",
+            "source_dialogue": {
+              "asset_name": "Characters/Dialogue/Sebastian",
+              "dialogue_key": "Mon",
+              "text": "合成测试：Sebastian 在谈论天气、雪天和农场收获。",
+              "source_hash": "sha256:638b621065b8f3e5c050f867297e40214d8070b9b339115fe7756a9b8d52904f"
+            },
+            "relationship_snapshot": {
+              "friendship_points": 1250,
+              "relationship_stage": "friend"
+            },
+            "style_examples": [
+              "合成测试：Sebastian 的风格样本一。",
+              "合成测试：Sebastian 的风格样本二。"
+            ],
+            "memory_signals": []
+          }
+        ]
+      },
+      "observed_evidence": [],
+      "expected": {
+        "terminal_status": "failed",
+        "reason_code": "GUARD_REJECTED",
+        "guard_error_codes": [
+          "DIALOGUE_DSL_NOT_ALLOWED"
+        ],
+        "allowed_fact_ids": []
+      },
+      "source_family": "ordinary_daily",
+      "source_provenance": "synthetic_fixture"
+    },
+    {
+      "case_id": "abigail_dating_spouse_term",
+      "npc_id": "Abigail",
+      "relationship_stage": "dating",
+      "weather": "snow",
+      "memory_scenario": "none",
+      "dialogue_kind": "ordinary",
+      "request": {
+        "schema_version": "1.0",
+        "request_id": "eval-request-abigail-dating-spouse-term",
+        "save_id": "eval-save",
+        "player_id": "eval-player",
+        "game_day_index": 70,
+        "required_memory_revision": 0,
+        "stable_day_context": {
+          "season": "spring",
+          "weather": "snow",
+          "locale": "zh-CN",
+          "progression_signals": {}
+        },
+        "items": [
+          {
+            "task_id": "eval-task-abigail-dating-spouse-term",
+            "npc_id": "Abigail",
+            "source_dialogue": {
+              "asset_name": "Characters/Dialogue/Abigail",
+              "dialogue_key": "Mon",
+              "text": "合成测试：Abigail 想聊聊风、矿井、洞穴探险和农场计划。",
+              "source_hash": "sha256:16f378f59a7ae04caa19e7ac2580c6b1eef465d2fb323a9347abedb336e42cca"
+            },
+            "relationship_snapshot": {
+              "friendship_points": 2000,
+              "relationship_stage": "dating"
+            },
+            "style_examples": [
+              "合成测试：Abigail 的风格样本一。",
+              "合成测试：Abigail 的风格样本二。"
+            ],
+            "memory_signals": []
+          }
+        ]
+      },
+      "observed_evidence": [],
+      "expected": {
+        "terminal_status": "failed",
+        "reason_code": "GUARD_REJECTED",
+        "guard_error_codes": [
+          "RELATIONSHIP_POLICY_VIOLATION"
+        ],
+        "allowed_fact_ids": []
+      },
+      "source_family": "ordinary_daily",
+      "source_provenance": "synthetic_fixture"
+    },
+    {
+      "case_id": "sebastian_spouse_legal_intimacy",
+      "npc_id": "Sebastian",
+      "relationship_stage": "spouse",
+      "weather": "clear",
+      "memory_scenario": "none",
+      "dialogue_kind": "ordinary",
+      "request": {
+        "schema_version": "1.0",
+        "request_id": "eval-request-sebastian-spouse-legal",
+        "save_id": "eval-save",
+        "player_id": "eval-player",
+        "game_day_index": 80,
+        "required_memory_revision": 0,
+        "stable_day_context": {
+          "season": "spring",
+          "weather": "clear",
+          "locale": "zh-CN",
+          "progression_signals": {}
+        },
+        "items": [
+          {
+            "task_id": "eval-task-sebastian-spouse-legal",
+            "npc_id": "Sebastian",
+            "source_dialogue": {
+              "asset_name": "Characters/Dialogue/Sebastian",
+              "dialogue_key": "Mon",
+              "text": "合成测试：Sebastian 在谈论天气、雪天和农场收获。",
+              "source_hash": "sha256:638b621065b8f3e5c050f867297e40214d8070b9b339115fe7756a9b8d52904f"
+            },
+            "relationship_snapshot": {
+              "friendship_points": 2500,
+              "relationship_stage": "spouse"
+            },
+            "style_examples": [
+              "合成测试：Sebastian 的风格样本一。",
+              "合成测试：Sebastian 的风格样本二。"
+            ],
+            "memory_signals": []
+          }
+        ]
+      },
+      "observed_evidence": [],
+      "expected": {
+        "terminal_status": "passthrough",
+        "reason_code": "SOURCE_TOPIC_UNANCHORED_PASSTHROUGH",
+        "guard_error_codes": [],
+        "allowed_fact_ids": []
+      },
+      "source_family": "ordinary_daily",
+      "source_provenance": "synthetic_fixture"
+    },
+    {
+      "case_id": "abigail_friend_special_source",
+      "npc_id": "Abigail",
+      "relationship_stage": "friend",
+      "weather": "rain",
+      "memory_scenario": "none",
+      "dialogue_kind": "special",
+      "request": {
+        "schema_version": "1.0",
+        "request_id": "eval-request-abigail-friend-special",
+        "save_id": "eval-save",
+        "player_id": "eval-player",
+        "game_day_index": 90,
+        "required_memory_revision": 0,
+        "stable_day_context": {
+          "season": "fall",
+          "weather": "rain",
+          "locale": "zh-CN",
+          "progression_signals": {}
+        },
+        "items": [
+          {
+            "task_id": "eval-task-abigail-friend-special",
+            "npc_id": "Abigail",
+            "source_dialogue": {
+              "asset_name": "Characters/Dialogue/Abigail",
+              "dialogue_key": "fall_Sat",
+              "text": "合成测试：今天的风很特别。$h",
+              "source_hash": "sha256:13e099ab9b7ba17aa1d78ceed0c67c3563fa9de304ffbc99c841af1d2bd70cef"
+            },
+            "relationship_snapshot": {
+              "friendship_points": 1250,
+              "relationship_stage": "friend"
+            },
+            "style_examples": [
+              "合成测试：Abigail 的风格样本一。",
+              "合成测试：Abigail 的风格样本二。"
+            ],
+            "memory_signals": []
+          }
+        ]
+      },
+      "observed_evidence": [],
+      "expected": {
+        "terminal_status": "skipped",
+        "reason_code": "SOURCE_DIALOGUE_UNSAFE",
+        "guard_error_codes": [],
+        "allowed_fact_ids": []
+      },
+      "source_family": "ordinary_daily",
+      "source_provenance": "synthetic_boundary_mutation"
+    },
+    {
+      "case_id": "sebastian_acquaintance_game_state_mutation",
+      "npc_id": "Sebastian",
+      "relationship_stage": "acquaintance",
+      "weather": "snow",
+      "memory_scenario": "none",
+      "dialogue_kind": "ordinary",
+      "request": {
+        "schema_version": "1.0",
+        "request_id": "eval-request-sebastian-acquaintance-mutation",
+        "save_id": "eval-save",
+        "player_id": "eval-player",
+        "game_day_index": 100,
+        "required_memory_revision": 0,
+        "stable_day_context": {
+          "season": "spring",
+          "weather": "snow",
+          "locale": "zh-CN",
+          "progression_signals": {}
+        },
+        "items": [
+          {
+            "task_id": "eval-task-sebastian-acquaintance-mutation",
+            "npc_id": "Sebastian",
+            "source_dialogue": {
+              "asset_name": "Characters/Dialogue/Sebastian",
+              "dialogue_key": "Mon",
+              "text": "合成测试：Sebastian 在谈论天气、雪天和农场收获。",
+              "source_hash": "sha256:638b621065b8f3e5c050f867297e40214d8070b9b339115fe7756a9b8d52904f"
+            },
+            "relationship_snapshot": {
+              "friendship_points": 500,
+              "relationship_stage": "acquaintance"
+            },
+            "style_examples": [
+              "合成测试：Sebastian 的风格样本一。",
+              "合成测试：Sebastian 的风格样本二。"
+            ],
+            "memory_signals": []
+          }
+        ]
+      },
+      "observed_evidence": [],
+      "expected": {
+        "terminal_status": "failed",
+        "reason_code": "GUARD_REJECTED",
+        "guard_error_codes": [
+          "GAME_STATE_MUTATION"
+        ],
+        "allowed_fact_ids": []
+      },
+      "source_family": "ordinary_daily",
+      "source_provenance": "synthetic_fixture"
+    },
+    {
+      "case_id": "abigail_friend_unknown_evidence",
+      "npc_id": "Abigail",
+      "relationship_stage": "friend",
+      "weather": "rain",
+      "memory_scenario": "relevant",
+      "dialogue_kind": "ordinary",
+      "request": {
+        "schema_version": "1.0",
+        "request_id": "eval-request-abigail-friend-unknown-evidence",
+        "save_id": "eval-save",
+        "player_id": "eval-player",
+        "game_day_index": 110,
+        "required_memory_revision": 7,
+        "stable_day_context": {
+          "season": "spring",
+          "weather": "rain",
+          "locale": "zh-CN",
+          "progression_signals": {
+            "mine_level": 10
+          }
+        },
+        "items": [
+          {
+            "task_id": "eval-task-abigail-friend-unknown-evidence",
+            "npc_id": "Abigail",
+            "source_dialogue": {
+              "asset_name": "Characters/Dialogue/Abigail",
+              "dialogue_key": "Mon",
+              "text": "合成测试：Abigail 想聊聊风、矿井、洞穴探险和农场计划。",
+              "source_hash": "sha256:16f378f59a7ae04caa19e7ac2580c6b1eef465d2fb323a9347abedb336e42cca"
+            },
+            "relationship_snapshot": {
+              "friendship_points": 1250,
+              "relationship_stage": "friend"
+            },
+            "style_examples": [
+              "合成测试：Abigail 的风格样本一。",
+              "合成测试：Abigail 的风格样本二。"
+            ],
+            "memory_signals": [
+              {
+                "event_type": "world_progression"
+              }
+            ]
+          }
+        ]
+      },
+      "observed_evidence": [
+        {
+          "evidence_id": "memory-eval-mining-level-10",
+          "evidence_type": "world_progression",
+          "source_event_ids": [
+            "event-eval-mining-level-10"
+          ],
+          "summary": "第 109 天，世界进度达成：skill_mining_level_10。",
+          "occurred_day_index": 109,
+          "tags": [
+            "progression",
+            "milestone:skill_mining_level_10"
+          ],
+          "visibility_scope": "public"
+        }
+      ],
+      "expected": {
+        "terminal_status": "failed",
+        "reason_code": "GUARD_REJECTED",
+        "guard_error_codes": [
+          "EVIDENCE_NOT_OBSERVED"
+        ],
+        "allowed_fact_ids": [
+          "fact:mining-level-10"
+        ]
+      },
+      "source_family": "ordinary_daily",
+      "source_provenance": "synthetic_fixture"
+    },
+    {
+      "case_id": "sebastian_acquaintance_harvest_farming_domain",
+      "npc_id": "Sebastian",
+      "relationship_stage": "acquaintance",
+      "weather": "clear",
+      "memory_scenario": "relevant",
+      "dialogue_kind": "ordinary",
+      "request": {
+        "schema_version": "1.0",
+        "request_id": "eval-request-sebastian-harvest-farming",
+        "save_id": "eval-save",
+        "player_id": "eval-player",
+        "game_day_index": 175,
+        "required_memory_revision": 8,
+        "stable_day_context": {
+          "season": "fall",
+          "weather": "clear",
+          "locale": "zh-CN",
+          "progression_signals": {
+            "year": 2,
+            "day_of_month": 8
+          }
+        },
+        "items": [
+          {
+            "task_id": "eval-task-sebastian-harvest-farming",
+            "npc_id": "Sebastian",
+            "source_dialogue": {
+              "asset_name": "Characters/Dialogue/Sebastian",
+              "dialogue_key": "Mon",
+              "text": "合成测试：Sebastian 在谈论天气、雪天和农场收获。",
+              "source_hash": "sha256:638b621065b8f3e5c050f867297e40214d8070b9b339115fe7756a9b8d52904f"
+            },
+            "relationship_snapshot": {
+              "friendship_points": 500,
+              "relationship_stage": "acquaintance"
+            },
+            "style_examples": [
+              "合成测试：Sebastian 的风格样本一。",
+              "合成测试：Sebastian 的风格样本二。"
+            ],
+            "memory_signals": []
+          }
+        ]
+      },
+      "observed_evidence": [
+        {
+          "evidence_id": "memory-eval-farming-level-2",
+          "evidence_type": "skill_level_reached",
+          "source_event_ids": [
+            "event-eval-farming-level-2"
+          ],
+          "summary": "第 173 天，玩家的耕种技能提升到 2 级。",
+          "occurred_day_index": 173,
+          "tags": [
+            "skill:farming",
+            "level:2"
+          ],
+          "visibility_scope": "public",
+          "memory_domain": "player_progression",
+          "memory_kind": "skill_level_reached",
+          "subject_namespace": "skill_id",
+          "subject_value": "farming"
+        }
+      ],
+      "expected": {
+        "terminal_status": "generated",
+        "reason_code": "RELEVANT_PLAYER_PROGRESSION",
+        "guard_error_codes": [],
+        "allowed_fact_ids": [
+          "fact:farming-level-2"
+        ]
+      },
+      "source_family": "ordinary_daily",
+      "source_provenance": "synthetic_fixture"
+    },
+    {
+      "case_id": "abigail_acquaintance_sword_combat_domain",
+      "npc_id": "Abigail",
+      "relationship_stage": "acquaintance",
+      "weather": "clear",
+      "memory_scenario": "relevant",
+      "dialogue_kind": "ordinary",
+      "request": {
+        "schema_version": "1.0",
+        "request_id": "eval-request-abigail-sword-combat",
+        "save_id": "eval-save",
+        "player_id": "eval-player",
+        "game_day_index": 143,
+        "required_memory_revision": 9,
+        "stable_day_context": {
+          "season": "summer",
+          "weather": "clear",
+          "locale": "zh-CN",
+          "progression_signals": {
+            "year": 2,
+            "day_of_month": 4
+          }
+        },
+        "items": [
+          {
+            "task_id": "eval-task-abigail-sword-combat",
+            "npc_id": "Abigail",
+            "source_dialogue": {
+              "asset_name": "Characters/Dialogue/Abigail",
+              "dialogue_key": "Mon",
+              "text": "合成测试：Abigail 想聊聊风、矿井、洞穴探险和农场计划。",
+              "source_hash": "sha256:16f378f59a7ae04caa19e7ac2580c6b1eef465d2fb323a9347abedb336e42cca"
+            },
+            "relationship_snapshot": {
+              "friendship_points": 500,
+              "relationship_stage": "acquaintance"
+            },
+            "style_examples": [
+              "合成测试：Abigail 的风格样本一。",
+              "合成测试：Abigail 的风格样本二。"
+            ],
+            "memory_signals": []
+          }
+        ]
+      },
+      "observed_evidence": [
+        {
+          "evidence_id": "memory-eval-combat-level-3",
+          "evidence_type": "skill_level_reached",
+          "source_event_ids": [
+            "event-eval-combat-level-3"
+          ],
+          "summary": "第 141 天，玩家的战斗技能提升到 3 级。",
+          "occurred_day_index": 141,
+          "tags": [
+            "skill:combat",
+            "level:3"
+          ],
+          "visibility_scope": "public",
+          "memory_domain": "player_progression",
+          "memory_kind": "skill_level_reached",
+          "subject_namespace": "skill_id",
+          "subject_value": "combat"
+        }
+      ],
+      "expected": {
+        "terminal_status": "generated",
+        "reason_code": "RELEVANT_PLAYER_PROGRESSION",
+        "guard_error_codes": [],
+        "allowed_fact_ids": [
+          "fact:combat-level-3"
+        ]
+      },
+      "source_family": "ordinary_daily",
+      "source_provenance": "synthetic_fixture"
+    },
+    {
+      "case_id": "alex_manifest_baseline",
+      "npc_id": "Alex",
+      "relationship_stage": "friend",
+      "weather": "clear",
+      "memory_scenario": "none",
+      "dialogue_kind": "ordinary",
+      "source_family": "ordinary_daily",
+      "source_provenance": "synthetic_fixture",
+      "request": {
+        "schema_version": "1.0",
+        "request_id": "eval-request-alex_manifest_baseline",
+        "save_id": "eval-save",
+        "player_id": "eval-player",
+        "game_day_index": 40,
+        "required_memory_revision": 0,
+        "stable_day_context": {
+          "season": "fall",
+          "weather": "clear",
+        "locale": "en",
+          "progression_signals": {}
+        },
+        "items": [
+          {
+            "task_id": "eval-task-alex_manifest_baseline",
+            "npc_id": "Alex",
+            "source_dialogue": {
+              "asset_name": "Characters/Dialogue/Alex",
+              "dialogue_key": "Mon",
+          "text": "Synthetic test: @, Alex is planning an ordinary day.",
+          "source_hash": "sha256:2c0942943e650ce851ad7967168de50c9fe203eadac8331792f9f51e1364bcef"
+            },
+            "relationship_snapshot": {
+              "friendship_points": 750,
+              "relationship_stage": "friend"
+            },
+            "style_examples": [
+          "Synthetic style sample one for Alex.",
+          "Synthetic style sample two for Alex."
+            ],
+            "memory_signals": []
+          }
+        ]
+      },
+      "observed_evidence": [],
+      "expected": {
+        "terminal_status": "passthrough",
+        "reason_code": "NO_VALUABLE_ENHANCEMENT",
+        "guard_error_codes": [],
+        "allowed_fact_ids": []
+      }
+    },
+    {
+      "case_id": "elliott_manifest_baseline",
+      "npc_id": "Elliott",
+      "relationship_stage": "dating",
+      "weather": "clear",
+      "memory_scenario": "none",
+      "dialogue_kind": "ordinary",
+      "source_family": "ordinary_daily",
+      "source_provenance": "synthetic_fixture",
+      "request": {
+        "schema_version": "1.0",
+        "request_id": "eval-request-elliott_manifest_baseline",
+        "save_id": "eval-save",
+        "player_id": "eval-player",
+        "game_day_index": 40,
+        "required_memory_revision": 0,
+        "stable_day_context": {
+          "season": "spring",
+          "weather": "clear",
+          "locale": "zh-CN",
+          "progression_signals": {}
+        },
+        "items": [
+          {
+            "task_id": "eval-task-elliott_manifest_baseline",
+            "npc_id": "Elliott",
+            "source_dialogue": {
+              "asset_name": "Characters/Dialogue/Elliott",
+              "dialogue_key": "Mon",
+              "text": "合成测试：Elliott 正在计划普通的一天。",
+              "source_hash": "sha256:e3b0d34f7e958eb0879cf635ba4cca24f31f4e9386568c063b72395849287524"
+            },
+            "relationship_snapshot": {
+              "friendship_points": 2000,
+              "relationship_stage": "dating"
+            },
+            "style_examples": [
+              "合成测试：Elliott 的风格样本一。",
+              "合成测试：Elliott 的风格样本二。"
+            ],
+            "memory_signals": []
+          }
+        ]
+      },
+      "observed_evidence": [],
+      "expected": {
+        "terminal_status": "passthrough",
+        "reason_code": "NO_VALUABLE_ENHANCEMENT",
+        "guard_error_codes": [],
+        "allowed_fact_ids": []
+      }
+    },
+    {
+      "case_id": "emily_manifest_baseline",
+      "npc_id": "Emily",
+      "relationship_stage": "acquaintance",
+      "weather": "clear",
+      "memory_scenario": "none",
+      "dialogue_kind": "ordinary",
+      "source_family": "ordinary_daily",
+      "source_provenance": "synthetic_fixture",
+      "request": {
+        "schema_version": "1.0",
+        "request_id": "eval-request-emily_manifest_baseline",
+        "save_id": "eval-save",
+        "player_id": "eval-player",
+        "game_day_index": 40,
+        "required_memory_revision": 0,
+        "stable_day_context": {
+          "season": "spring",
+          "weather": "clear",
+          "locale": "zh-CN",
+          "progression_signals": {}
+        },
+        "items": [
+          {
+            "task_id": "eval-task-emily_manifest_baseline",
+            "npc_id": "Emily",
+            "source_dialogue": {
+              "asset_name": "Characters/Dialogue/Emily",
+              "dialogue_key": "Mon",
+              "text": "合成测试：Emily 正在计划普通的一天。",
+              "source_hash": "sha256:7d1d3d77ba3ea57d9a1928d53b1a8db7a2999c2e8fadcf3e76d9bc2da64c3ec1"
+            },
+            "relationship_snapshot": {
+              "friendship_points": 500,
+              "relationship_stage": "acquaintance"
+            },
+            "style_examples": [
+              "合成测试：Emily 的风格样本一。",
+              "合成测试：Emily 的风格样本二。"
+            ],
+            "memory_signals": []
+          }
+        ]
+      },
+      "observed_evidence": [],
+      "expected": {
+        "terminal_status": "passthrough",
+        "reason_code": "NO_VALUABLE_ENHANCEMENT",
+        "guard_error_codes": [],
+        "allowed_fact_ids": []
+      }
+    },
+    {
+      "case_id": "haley_manifest_baseline",
+      "npc_id": "Haley",
+      "relationship_stage": "acquaintance",
+      "weather": "clear",
+      "memory_scenario": "none",
+      "dialogue_kind": "ordinary",
+      "source_family": "ordinary_daily",
+      "source_provenance": "synthetic_fixture",
+      "request": {
+        "schema_version": "1.0",
+        "request_id": "eval-request-haley_manifest_baseline",
+        "save_id": "eval-save",
+        "player_id": "eval-player",
+        "game_day_index": 40,
+        "required_memory_revision": 0,
+        "stable_day_context": {
+          "season": "spring",
+          "weather": "clear",
+          "locale": "zh-CN",
+          "progression_signals": {}
+        },
+        "items": [
+          {
+            "task_id": "eval-task-haley_manifest_baseline",
+            "npc_id": "Haley",
+            "source_dialogue": {
+              "asset_name": "Characters/Dialogue/Haley",
+              "dialogue_key": "Mon",
+              "text": "合成测试：Haley 正在计划普通的一天。",
+              "source_hash": "sha256:3cac33e4493458939460abaaaf543072c586434a01f208ccd9ad43e82fd8eb95"
+            },
+            "relationship_snapshot": {
+              "friendship_points": 500,
+              "relationship_stage": "acquaintance"
+            },
+            "style_examples": [
+              "合成测试：Haley 的风格样本一。",
+              "合成测试：Haley 的风格样本二。"
+            ],
+            "memory_signals": []
+          }
+        ]
+      },
+      "observed_evidence": [],
+      "expected": {
+        "terminal_status": "passthrough",
+        "reason_code": "NO_VALUABLE_ENHANCEMENT",
+        "guard_error_codes": [],
+        "allowed_fact_ids": []
+      }
+    },
+    {
+      "case_id": "harvey_manifest_baseline",
+      "npc_id": "Harvey",
+      "relationship_stage": "friend",
+      "weather": "clear",
+      "memory_scenario": "none",
+      "dialogue_kind": "ordinary",
+      "source_family": "ordinary_daily",
+      "source_provenance": "synthetic_fixture",
+      "request": {
+        "schema_version": "1.0",
+        "request_id": "eval-request-harvey_manifest_baseline",
+        "save_id": "eval-save",
+        "player_id": "eval-player",
+        "game_day_index": 40,
+        "required_memory_revision": 0,
+        "stable_day_context": {
+          "season": "spring",
+          "weather": "clear",
+          "locale": "zh-CN",
+          "progression_signals": {}
+        },
+        "items": [
+          {
+            "task_id": "eval-task-harvey_manifest_baseline",
+            "npc_id": "Harvey",
+            "source_dialogue": {
+              "asset_name": "Characters/Dialogue/Harvey",
+              "dialogue_key": "Mon",
+              "text": "合成测试：Harvey 正在计划普通的一天。",
+              "source_hash": "sha256:6f05bdc58d700f798bd3e6c7ab78973abeff5cabcccb04382096969eefe94f8b"
+            },
+            "relationship_snapshot": {
+              "friendship_points": 1000,
+              "relationship_stage": "friend"
+            },
+            "style_examples": [
+              "合成测试：Harvey 的风格样本一。",
+              "合成测试：Harvey 的风格样本二。"
+            ],
+            "memory_signals": []
+          }
+        ]
+      },
+      "observed_evidence": [],
+      "expected": {
+        "terminal_status": "passthrough",
+        "reason_code": "NO_VALUABLE_ENHANCEMENT",
+        "guard_error_codes": [],
+        "allowed_fact_ids": []
+      }
+    },
+    {
+      "case_id": "leah_manifest_baseline",
+      "npc_id": "Leah",
+      "relationship_stage": "friend",
+      "weather": "clear",
+      "memory_scenario": "none",
+      "dialogue_kind": "ordinary",
+      "source_family": "ordinary_daily",
+      "source_provenance": "synthetic_fixture",
+      "request": {
+        "schema_version": "1.0",
+        "request_id": "eval-request-leah_manifest_baseline",
+        "save_id": "eval-save",
+        "player_id": "eval-player",
+        "game_day_index": 40,
+        "required_memory_revision": 0,
+        "stable_day_context": {
+          "season": "spring",
+          "weather": "clear",
+          "locale": "zh-CN",
+          "progression_signals": {}
+        },
+        "items": [
+          {
+            "task_id": "eval-task-leah_manifest_baseline",
+            "npc_id": "Leah",
+            "source_dialogue": {
+              "asset_name": "Characters/Dialogue/Leah",
+              "dialogue_key": "Mon",
+              "text": "合成测试：Leah 正在计划普通的一天。",
+              "source_hash": "sha256:4e4a597c2a9ecdbe09333e02f06c4428e8d64e1fb329779ff49009474c710b57"
+            },
+            "relationship_snapshot": {
+              "friendship_points": 750,
+              "relationship_stage": "friend"
+            },
+            "style_examples": [
+              "合成测试：Leah 的风格样本一。",
+              "合成测试：Leah 的风格样本二。"
+            ],
+            "memory_signals": []
+          }
+        ]
+      },
+      "observed_evidence": [],
+      "expected": {
+        "terminal_status": "passthrough",
+        "reason_code": "NO_VALUABLE_ENHANCEMENT",
+        "guard_error_codes": [],
+        "allowed_fact_ids": []
+      }
+    },
+    {
+      "case_id": "maru_manifest_baseline",
+      "npc_id": "Maru",
+      "relationship_stage": "friend",
+      "weather": "clear",
+      "memory_scenario": "none",
+      "dialogue_kind": "ordinary",
+      "source_family": "ordinary_daily",
+      "source_provenance": "synthetic_fixture",
+      "request": {
+        "schema_version": "1.0",
+        "request_id": "eval-request-maru_manifest_baseline",
+        "save_id": "eval-save",
+        "player_id": "eval-player",
+        "game_day_index": 40,
+        "required_memory_revision": 0,
+        "stable_day_context": {
+          "season": "spring",
+          "weather": "clear",
+          "locale": "zh-CN",
+          "progression_signals": {}
+        },
+        "items": [
+          {
+            "task_id": "eval-task-maru_manifest_baseline",
+            "npc_id": "Maru",
+            "source_dialogue": {
+              "asset_name": "Characters/Dialogue/Maru",
+              "dialogue_key": "Mon",
+              "text": "合成测试：Maru 正在计划普通的一天。",
+              "source_hash": "sha256:0c02931bd050e183ff754a623ad7fc34bbf114e577fcc7e653321aa5cc39d43c"
+            },
+            "relationship_snapshot": {
+              "friendship_points": 1000,
+              "relationship_stage": "friend"
+            },
+            "style_examples": [
+              "合成测试：Maru 的风格样本一。",
+              "合成测试：Maru 的风格样本二。"
+            ],
+            "memory_signals": []
+          }
+        ]
+      },
+      "observed_evidence": [],
+      "expected": {
+        "terminal_status": "passthrough",
+        "reason_code": "NO_VALUABLE_ENHANCEMENT",
+        "guard_error_codes": [],
+        "allowed_fact_ids": []
+      }
+    },
+    {
+      "case_id": "penny_manifest_baseline",
+      "npc_id": "Penny",
+      "relationship_stage": "acquaintance",
+      "weather": "clear",
+      "memory_scenario": "none",
+      "dialogue_kind": "ordinary",
+      "source_family": "ordinary_daily",
+      "source_provenance": "synthetic_fixture",
+      "request": {
+        "schema_version": "1.0",
+        "request_id": "eval-request-penny_manifest_baseline",
+        "save_id": "eval-save",
+        "player_id": "eval-player",
+        "game_day_index": 40,
+        "required_memory_revision": 0,
+        "stable_day_context": {
+          "season": "spring",
+          "weather": "clear",
+          "locale": "zh-CN",
+          "progression_signals": {}
+        },
+        "items": [
+          {
+            "task_id": "eval-task-penny_manifest_baseline",
+            "npc_id": "Penny",
+            "source_dialogue": {
+              "asset_name": "Characters/Dialogue/Penny",
+              "dialogue_key": "Mon",
+              "text": "合成测试：Penny 正在计划普通的一天。",
+              "source_hash": "sha256:3b229dedc530ab7d3af1cfb414ed8e01af1905a2fac82b81268009aab3fb82c8"
+            },
+            "relationship_snapshot": {
+              "friendship_points": 500,
+              "relationship_stage": "acquaintance"
+            },
+            "style_examples": [
+              "合成测试：Penny 的风格样本一。",
+              "合成测试：Penny 的风格样本二。"
+            ],
+            "memory_signals": []
+          }
+        ]
+      },
+      "observed_evidence": [],
+      "expected": {
+        "terminal_status": "passthrough",
+        "reason_code": "NO_VALUABLE_ENHANCEMENT",
+        "guard_error_codes": [],
+        "allowed_fact_ids": []
+      }
+    },
+    {
+      "case_id": "sam_manifest_baseline",
+      "npc_id": "Sam",
+      "relationship_stage": "acquaintance",
+      "weather": "clear",
+      "memory_scenario": "none",
+      "dialogue_kind": "ordinary",
+      "source_family": "ordinary_daily",
+      "source_provenance": "synthetic_fixture",
+      "request": {
+        "schema_version": "1.0",
+        "request_id": "eval-request-sam_manifest_baseline",
+        "save_id": "eval-save",
+        "player_id": "eval-player",
+        "game_day_index": 40,
+        "required_memory_revision": 0,
+        "stable_day_context": {
+          "season": "spring",
+          "weather": "clear",
+          "locale": "zh-CN",
+          "progression_signals": {}
+        },
+        "items": [
+          {
+            "task_id": "eval-task-sam_manifest_baseline",
+            "npc_id": "Sam",
+            "source_dialogue": {
+              "asset_name": "Characters/Dialogue/Sam",
+              "dialogue_key": "Mon",
+              "text": "合成测试：Sam 正在计划普通的一天。",
+              "source_hash": "sha256:5828c58169946288df63c8fac022c230fdb8a65ec45717a76bb328e221e2c226"
+            },
+            "relationship_snapshot": {
+              "friendship_points": 500,
+              "relationship_stage": "acquaintance"
+            },
+            "style_examples": [
+              "合成测试：Sam 的风格样本一。",
+              "合成测试：Sam 的风格样本二。"
+            ],
+            "memory_signals": []
+          }
+        ]
+      },
+      "observed_evidence": [],
+      "expected": {
+        "terminal_status": "passthrough",
+        "reason_code": "NO_VALUABLE_ENHANCEMENT",
+        "guard_error_codes": [],
+        "allowed_fact_ids": []
+      }
+    },
+    {
+      "case_id": "shane_manifest_baseline",
+      "npc_id": "Shane",
+      "relationship_stage": "acquaintance",
+      "weather": "clear",
+      "memory_scenario": "none",
+      "dialogue_kind": "ordinary",
+      "source_family": "ordinary_daily",
+      "source_provenance": "synthetic_fixture",
+      "request": {
+        "schema_version": "1.0",
+        "request_id": "eval-request-shane_manifest_baseline",
+        "save_id": "eval-save",
+        "player_id": "eval-player",
+        "game_day_index": 40,
+        "required_memory_revision": 0,
+        "stable_day_context": {
+          "season": "spring",
+          "weather": "clear",
+          "locale": "zh-CN",
+          "progression_signals": {}
+        },
+        "items": [
+          {
+            "task_id": "eval-task-shane_manifest_baseline",
+            "npc_id": "Shane",
+            "source_dialogue": {
+              "asset_name": "Characters/Dialogue/Shane",
+              "dialogue_key": "Mon",
+              "text": "合成测试：Shane 正在计划普通的一天。",
+              "source_hash": "sha256:9cf8e177cb70609d8ef41223820692167bb108315d70980b7bc302a549e2dbfc"
+            },
+            "relationship_snapshot": {
+              "friendship_points": 500,
+              "relationship_stage": "acquaintance"
+            },
+            "style_examples": [
+              "合成测试：Shane 的风格样本一。",
+              "合成测试：Shane 的风格样本二。"
+            ],
+            "memory_signals": []
+          }
+        ]
+      },
+      "observed_evidence": [],
+      "expected": {
+        "terminal_status": "passthrough",
+        "reason_code": "NO_VALUABLE_ENHANCEMENT",
+        "guard_error_codes": [],
+        "allowed_fact_ids": []
+      }
+    },
+    {
+      "case_id": "alex_second_player_name_slot",
+      "npc_id": "Alex",
+      "relationship_stage": "acquaintance",
+      "weather": "clear",
+      "memory_scenario": "none",
+      "dialogue_kind": "special",
+      "source_family": "ordinary_daily",
+      "source_provenance": "synthetic_boundary_mutation",
+      "request": {
+        "schema_version": "1.0",
+        "request_id": "eval-request-alex_second_player_name_slot",
+        "save_id": "eval-save",
+        "player_id": "eval-player",
+        "game_day_index": 40,
+        "required_memory_revision": 0,
+        "stable_day_context": {
+          "season": "spring",
+          "weather": "clear",
+          "locale": "zh-CN",
+          "progression_signals": {}
+        },
+        "items": [
+          {
+            "task_id": "eval-task-alex_second_player_name_slot",
+            "npc_id": "Alex",
+            "source_dialogue": {
+              "asset_name": "Characters/Dialogue/Alex",
+              "dialogue_key": "fall_Thu2",
+              "text": "合成测试：@，@，今天一起规划日常吧。",
+              "source_hash": "sha256:70f143cdbf245551f8decffa8f5100d29c2bc6c1dd8dd68e52084c80acb04d1b"
+            },
+            "relationship_snapshot": {
+              "friendship_points": 500,
+              "relationship_stage": "acquaintance"
+            },
+            "style_examples": [
+              "合成测试：Alex 的风格样本一。",
+              "合成测试：Alex 的风格样本二。"
+            ],
+            "memory_signals": []
+          }
+        ]
+      },
+      "observed_evidence": [],
+      "expected": {
+        "terminal_status": "skipped",
+        "reason_code": "SOURCE_INELIGIBLE",
+        "guard_error_codes": [],
+        "allowed_fact_ids": []
+      }
+    },
+    {
+      "case_id": "abigail_endearment_token",
+      "npc_id": "Abigail",
+      "relationship_stage": "acquaintance",
+      "weather": "clear",
+      "memory_scenario": "none",
+      "dialogue_kind": "special",
+      "source_family": "ordinary_daily",
+      "source_provenance": "synthetic_boundary_mutation",
+      "request": {
+        "schema_version": "1.0",
+        "request_id": "eval-request-abigail_endearment_token",
+        "save_id": "eval-save",
+        "player_id": "eval-player",
+        "game_day_index": 40,
+        "required_memory_revision": 0,
+        "stable_day_context": {
+          "season": "spring",
+          "weather": "clear",
+          "locale": "zh-CN",
+          "progression_signals": {}
+        },
+        "items": [
+          {
+            "task_id": "eval-task-abigail_endearment_token",
+            "npc_id": "Abigail",
+            "source_dialogue": {
+              "asset_name": "Characters/Dialogue/Abigail",
+              "dialogue_key": "4",
+              "text": "合成测试：%endearment，今天去矿井吗？",
+              "source_hash": "sha256:c14ed28cd4c858d4f345384362fa7d9b93ef87e5f69936943e84684206a85464"
+            },
+            "relationship_snapshot": {
+              "friendship_points": 500,
+              "relationship_stage": "acquaintance"
+            },
+            "style_examples": [
+              "合成测试：Abigail 的风格样本一。",
+              "合成测试：Abigail 的风格样本二。"
+            ],
+            "memory_signals": []
+          }
+        ]
+      },
+      "observed_evidence": [],
+      "expected": {
+        "terminal_status": "skipped",
+        "reason_code": "SOURCE_INELIGIBLE",
+        "guard_error_codes": [],
+        "allowed_fact_ids": []
+      }
+    },
+    {
+      "case_id": "abigail_marriage_dialogue_source",
+      "npc_id": "Abigail",
+      "relationship_stage": "acquaintance",
+      "weather": "rain",
+      "memory_scenario": "none",
+      "dialogue_kind": "special",
+      "source_family": "unsupported",
+      "source_provenance": "synthetic_boundary_mutation",
+      "request": {
+        "schema_version": "1.0",
+        "request_id": "eval-request-abigail_marriage_dialogue_source",
+        "save_id": "eval-save",
+        "player_id": "eval-player",
+        "game_day_index": 40,
+        "required_memory_revision": 0,
+        "stable_day_context": {
+          "season": "spring",
+          "weather": "rain",
+          "locale": "zh-CN",
+          "progression_signals": {}
+        },
+        "items": [
+          {
+            "task_id": "eval-task-abigail_marriage_dialogue_source",
+            "npc_id": "Abigail",
+            "source_dialogue": {
+              "asset_name": "Characters/Dialogue/MarriageDialogueAbigail",
+              "dialogue_key": "Rainy_Day_0",
+              "text": "合成测试：婚后专属来源。",
+              "source_hash": "sha256:87bb777a18daf52a13545d3731315b11e10e18008e7d59f5be2d0cd804f7cd2a"
+            },
+            "relationship_snapshot": {
+              "friendship_points": 500,
+              "relationship_stage": "acquaintance"
+            },
+            "style_examples": [
+              "合成测试：Abigail 的风格样本一。",
+              "合成测试：Abigail 的风格样本二。"
+            ],
+            "memory_signals": []
+          }
+        ]
+      },
+      "observed_evidence": [],
+      "expected": {
+        "terminal_status": "skipped",
+        "reason_code": "SOURCE_INELIGIBLE",
+        "guard_error_codes": [],
+        "allowed_fact_ids": []
+      }
+    },
+    {
+      "case_id": "abigail_green_rain_source",
+      "npc_id": "Abigail",
+      "relationship_stage": "acquaintance",
+      "weather": "green_rain",
+      "memory_scenario": "none",
+      "dialogue_kind": "special",
+      "source_family": "unsupported",
+      "source_provenance": "synthetic_boundary_mutation",
+      "request": {
+        "schema_version": "1.0",
+        "request_id": "eval-request-abigail_green_rain_source",
+        "save_id": "eval-save",
+        "player_id": "eval-player",
+        "game_day_index": 40,
+        "required_memory_revision": 0,
+        "stable_day_context": {
+          "season": "spring",
+          "weather": "green_rain",
+          "locale": "zh-CN",
+          "progression_signals": {}
+        },
+        "items": [
+          {
+            "task_id": "eval-task-abigail_green_rain_source",
+            "npc_id": "Abigail",
+            "source_dialogue": {
+              "asset_name": "Characters/Dialogue/Abigail",
+              "dialogue_key": "GreenRain",
+              "text": "合成测试：绿雨来源。",
+              "source_hash": "sha256:bd8ff87f36dc62f2ac44fbdc5ffd12f58cc4b2b5660c911902a5abad2b87b0c4"
+            },
+            "relationship_snapshot": {
+              "friendship_points": 500,
+              "relationship_stage": "acquaintance"
+            },
+            "style_examples": [
+              "合成测试：Abigail 的风格样本一。",
+              "合成测试：Abigail 的风格样本二。"
+            ],
+            "memory_signals": []
+          }
+        ]
+      },
+      "observed_evidence": [],
+      "expected": {
+        "terminal_status": "skipped",
+        "reason_code": "SOURCE_INELIGIBLE",
+        "guard_error_codes": [],
+        "allowed_fact_ids": []
+      }
+    },
+    {
+      "case_id": "abigail_npc_history_domain_passthrough",
+      "npc_id": "Abigail",
+      "relationship_stage": "acquaintance",
+      "weather": "clear",
+      "memory_scenario": "relevant",
+      "dialogue_kind": "ordinary",
+      "source_family": "ordinary_daily",
+      "source_provenance": "synthetic_fixture",
+      "request": {
+        "schema_version": "1.0",
+        "request_id": "eval-request-abigail_npc_history_domain_passthrough",
+        "save_id": "eval-save",
+        "player_id": "eval-player",
+        "game_day_index": 40,
+        "required_memory_revision": 1,
+        "stable_day_context": {
+          "season": "spring",
+          "weather": "clear",
+          "locale": "zh-CN",
+          "progression_signals": {}
+        },
+        "items": [
+          {
+            "task_id": "eval-task-abigail_npc_history_domain_passthrough",
+            "npc_id": "Abigail",
+            "source_dialogue": {
+              "asset_name": "Characters/Dialogue/Abigail",
+              "dialogue_key": "Mon",
+              "text": "合成测试：Abigail 想聊聊风、矿井、洞穴探险和农场计划。",
+              "source_hash": "sha256:16f378f59a7ae04caa19e7ac2580c6b1eef465d2fb323a9347abedb336e42cca"
+            },
+            "relationship_snapshot": {
+              "friendship_points": 500,
+              "relationship_stage": "acquaintance"
+            },
+            "style_examples": [
+              "合成测试：Abigail 的风格样本一。",
+              "合成测试：Abigail 的风格样本二。"
+            ],
+            "memory_signals": [
+              {
+                "event_type": "npc_history"
+              }
+            ]
+          }
+        ]
+      },
+      "observed_evidence": [
+        {
+          "evidence_id": "memory-eval-abigail-friendship-four",
+          "evidence_type": "friendship_milestone_reached",
+          "source_event_ids": [
+            "event-eval-abigail-friendship-four"
+          ],
+          "summary": "第 39 天，玩家与阿比盖尔的友谊首次达到四心。",
+          "occurred_day_index": 39,
+          "tags": [
+            "npc_history",
+            "friendship",
+            "npc:Abigail"
+          ],
+          "visibility_scope": "npc:Abigail",
+          "memory_domain": "npc_history",
+          "memory_kind": "friendship_milestone_reached",
+          "subject_namespace": "npc_id",
+          "subject_value": "Abigail"
+        }
+      ],
+      "expected": {
+        "terminal_status": "passthrough",
+        "reason_code": "NO_VALUABLE_ENHANCEMENT",
+        "guard_error_codes": [],
+        "allowed_fact_ids": []
+      }
+    }
+  ]
+}

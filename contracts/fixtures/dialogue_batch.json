@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0",
+  "request_id": "request-dialogues-spring-15",
+  "save_id": "save-standard-farm-001",
+  "player_id": "player-farmer-001",
+  "game_day_index": 14,
+  "required_memory_revision": 42,
+  "stable_day_context": {
+    "season": "spring",
+    "weather": "rain",
+    "locale": "zh-CN",
+    "progression_signals": {
+      "community_center": "pantry_completed",
+      "mine_level": 40
+    }
+  },
+  "items": [
+    {
+      "task_id": "task-abigail-spring-15",
+      "npc_id": "Abigail",
+      "source_dialogue": {
+        "asset_name": "Characters/Dialogue/Abigail",
+        "dialogue_key": "spring_Mon",
+        "text": "我其实挺喜欢下雨的。这里的山谷看起来更神秘了。",
+        "source_hash": "sha256:abigail-spring-mon-zh-cn"
+      },
+      "relationship_snapshot": {
+        "friendship_points": 750,
+        "relationship_stage": "friend"
+      },
+      "style_examples": [
+        "天气好的时候，我偶尔会去森林里走走。",
+        "你有没有觉得，矿洞里藏着很多秘密？",
+        "有时候镇上的生活实在太安静了。"
+      ],
+      "memory_signals": [
+        {
+          "signal_id": "signal-gift-abigail-spring-14",
+          "event_type": "gift_given",
+          "occurred_day_index": 13,
+          "tags": ["gift", "amethyst", "loved"]
+        }
+      ]
+    },
+    {
+      "task_id": "task-sebastian-spring-15",
+      "npc_id": "Sebastian",
+      "source_dialogue": {
+        "asset_name": "Characters/Dialogue/Sebastian",
+        "dialogue_key": "spring_Mon",
+        "text": "这种天气正适合待在地下室里。",
+        "source_hash": "sha256:sebastian-spring-mon-zh-cn"
+      },
+      "relationship_snapshot": {
+        "friendship_points": 500,
+        "relationship_stage": "acquaintance"
+      },
+      "style_examples": [
+        "我昨晚又熬夜写代码了。",
+        "镇上的人总觉得我应该多出去走走。",
+        "雨声至少能盖住外面的喧闹。"
+      ],
+      "memory_signals": []
+    }
+  ]
+}

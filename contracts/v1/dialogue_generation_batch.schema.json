@@ -1,0 +1,174 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:stardew-npc-agent:contracts:v1:dialogue-generation-batch-request",
+  "title": "DialogueGenerationBatchRequest",
+  "$comment": "每日预生成请求的 v1 wire contract。标准 Draft 2020-12 校验数值与结构；x-stardew-json-integer-token=true 额外要求运行时只接受不含小数点或指数的 JSON integer token。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "request_id",
+    "save_id",
+    "player_id",
+    "game_day_index",
+    "required_memory_revision",
+    "stable_day_context",
+    "items"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "request_id": {
+      "$ref": "#/$defs/non_blank_string"
+    },
+    "save_id": {
+      "$ref": "#/$defs/non_blank_string"
+    },
+    "player_id": {
+      "$ref": "#/$defs/non_blank_string"
+    },
+    "game_day_index": {
+      "$comment": "非负日索引采用 C# Int32 与 Python 的最低共同范围。",
+      "type": "integer",
+      "x-stardew-json-integer-token": true,
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "required_memory_revision": {
+      "$comment": "记忆 revision 必须可由 C# Int32 客户端无损解析。",
+      "type": "integer",
+      "x-stardew-json-integer-token": true,
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "stable_day_context": {
+      "$ref": "#/$defs/stable_day_context"
+    },
+    "items": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 8,
+      "items": {
+        "$ref": "#/$defs/dialogue_item"
+      }
+    }
+  },
+  "$defs": {
+    "non_blank_string": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S",
+      "allOf": [
+        {
+          "not": {
+            "pattern": "^\\s"
+          }
+        },
+        {
+          "not": {
+            "pattern": "\\s$"
+          }
+        }
+      ]
+    },
+    "stable_day_context": {
+      "$comment": "只携带在每日预生成期间稳定的上下文；progression_signals 保留为可扩展 JSON object。",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["season", "weather", "locale", "progression_signals"],
+      "properties": {
+        "season": {
+          "$ref": "#/$defs/non_blank_string"
+        },
+        "weather": {
+          "$ref": "#/$defs/non_blank_string"
+        },
+        "locale": {
+          "$ref": "#/$defs/non_blank_string"
+        },
+        "progression_signals": {
+          "type": "object"
+        }
+      }
+    },
+    "source_dialogue": {
+      "$comment": "asset_name/dialogue_key 定位来源，text 是语义锚点，source_hash 防止展示陈旧结果。",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["asset_name", "dialogue_key", "text", "source_hash"],
+      "properties": {
+        "asset_name": {
+          "$ref": "#/$defs/non_blank_string"
+        },
+        "dialogue_key": {
+          "$ref": "#/$defs/non_blank_string"
+        },
+        "text": {
+          "$ref": "#/$defs/non_blank_string"
+        },
+        "source_hash": {
+          "$ref": "#/$defs/non_blank_string"
+        }
+      }
+    },
+    "relationship_snapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["friendship_points", "relationship_stage"],
+      "properties": {
+        "friendship_points": {
+          "$comment": "好感点允许负数，但 wire 上限定为完整 Int32 闭区间。",
+          "type": "integer",
+          "x-stardew-json-integer-token": true,
+          "minimum": -2147483648,
+          "maximum": 2147483647
+        },
+        "relationship_stage": {
+          "$ref": "#/$defs/non_blank_string"
+        }
+      }
+    },
+    "dialogue_item": {
+      "$comment": "style_examples 约束原作语气；memory_signals 只提供轻量、结构化线索，不等同于完整记忆正文。",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "task_id",
+        "npc_id",
+        "source_dialogue",
+        "relationship_snapshot",
+        "style_examples",
+        "memory_signals"
+      ],
+      "properties": {
+        "task_id": {
+          "$ref": "#/$defs/non_blank_string"
+        },
+        "npc_id": {
+          "$ref": "#/$defs/non_blank_string"
+        },
+        "source_dialogue": {
+          "$ref": "#/$defs/source_dialogue"
+        },
+        "relationship_snapshot": {
+          "$ref": "#/$defs/relationship_snapshot"
+        },
+        "style_examples": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 5,
+          "items": {
+            "$ref": "#/$defs/non_blank_string"
+          }
+        },
+        "memory_signals": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  }
+}

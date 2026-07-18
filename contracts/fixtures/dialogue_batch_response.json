@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "request_id": "request-dialogues-spring-15",
+  "memory_revision": 42,
+  "items": [
+    {
+      "task_id": "task-abigail-spring-15",
+      "generation_id": "generation-abigail-spring-15",
+      "generation_key": "generation-key-abigail-spring-15",
+      "status": "generated",
+      "text": "我其实挺喜欢下雨的……昨天那块紫水晶，在这种天气里一定更神秘。",
+      "source_hash": "sha256:abigail-spring-mon-zh-cn",
+      "reason_code": "RELEVANT_SHARED_MEMORY",
+      "evidence_ids": ["event-gift-abigail-spring-14"],
+      "trace_id": "trace-abigail-spring-15"
+    },
+    {
+      "task_id": "task-sebastian-spring-15",
+      "generation_id": "generation-sebastian-spring-15",
+      "generation_key": "generation-key-sebastian-spring-15",
+      "status": "passthrough",
+      "text": null,
+      "source_hash": "sha256:sebastian-spring-mon-zh-cn",
+      "reason_code": "NO_VALUABLE_ENHANCEMENT",
+      "evidence_ids": [],
+      "trace_id": "trace-sebastian-spring-15"
+    }
+  ]
+}
